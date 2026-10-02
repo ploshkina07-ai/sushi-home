@@ -1,0 +1,2014 @@
+{
+  "admin": {
+    "accessKey": "sushi-home-2026"
+  },
+  "content": {
+    "index": {
+      "aboutTitle": "Про Sushi Home",
+      "aboutText": "Sushi Home — це не просто доставка ролів, а повноцінний сервіс для тих, хто любить свіжі інгредієнти, смачно приготовані страви та зручне замовлення. Ми готуємо кожен рол у власній кухні, ретельно підібрали склад і робимо все, щоб смаки залишалися яскравими, а доставка була максимально швидкою.\n\nМи працюємо щодня, щоб ви могли замовити улюблені сети, гарячі страви, напої та фірмові роли без зайвих складнощів. Для нас важливі якість, швидкість і уважне ставлення до кожного клієнта."
+    },
+    "delivery": {
+      "title": "SUSHI HOME В ДИМЕРІ",
+      "text": "Наша місія – робити смачне доступним. Наша кухня працює за адресою вул. Яблунева, 3А, тому нас максимально легко знайти.\n\nУ нас можна скуштувати улюблені роли прямо в закладі, оформити самовивіз або замовити доставку.\n\nСмачно. Якісно. Поруч."
+    },
+    "store": {
+      "address": "смт Димер, вул. Яблунева, 3А",
+      "mapUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638.8502324394291!2d30.310672769665718!3d50.78381929822864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472ad9a86b54b46d%3A0x94145c19cb85ee3f!2sSushi%20Home!5e1!3m2!1suk!2sua!4v1785797086008!5m2!1suk!2sua"
+    }
+  },
+  "index": {
+    "banners": [
+      {
+        "title": "Банер 1",
+        "subtitle": "",
+        "image": "images/banner.png"
+      },
+      {
+        "title": "Банер 2",
+        "subtitle": "",
+        "image": "images/banner2.png"
+      },
+      {
+        "title": "Банер 3",
+        "subtitle": "",
+        "image": "images/banner3.png"
+      },
+      {
+        "title": "Банер 4",
+        "subtitle": "",
+        "image": "images/banner4.png"
+      }
+    ],
+    "newProducts": [
+      {
+        "id": "new-1",
+        "title": "Рол \"Сакура\" з креветками та манго",
+        "price": "250",
+        "weight": "295 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, креветка, манго, лосось, соус унагі, кунжут",
+        "image": "images/New/Sakura.jpg"
+      },
+      {
+        "id": "new-2",
+        "title": "Рол Сонячний з креветкою та огірком",
+        "price": "250",
+        "weight": "205 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, креветка, огірок, кунжут",
+        "image": "images/New/Sun.jpg"
+      },
+      {
+        "id": "new-3",
+        "title": "Хоткраб з мідіями та огірком",
+        "price": "250",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, огірок, крабовий заміс, соус унагі, мідії",
+        "image": "images/New/HotCrub.jpg"
+      },
+      {
+        "id": "new-4",
+        "title": "Нацу з тунцем та авокадо",
+        "price": "250",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, авокадо, тунець, ікра масаго, соус унагі",
+        "image": "images/New/Tuna.jpg"
+      },
+      {
+        "id": "new-5",
+        "title": "Нацу з вугрем та авокадо",
+        "price": "250",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, авокадо, вугор, ікра масаго, соус унагі",
+        "image": "images/New/Vugor.jpg"
+      },
+      {
+        "id": "new-6",
+        "title": "Нацу з креветкою та манго",
+        "price": "250",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, манго, креветка, ікра масаго, соус унагі",
+        "image": "images/New/Krevetka.jpg"
+      },
+      {
+        "id": "new-7",
+        "title": "Нацу з лососем та манго",
+        "price": "250",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, манго, лосось, ікра масаго, соус унагі",
+        "image": "images/New/Salmon.jpg"
+      },
+      {
+        "id": "new-8",
+        "title": "Сет \"Нацу дей\"",
+        "price": "250",
+        "weight": "625 г",
+        "ingredients": "Нацу з тунцем, Нацу з вугрем, Нацу з креветкою, Нацу з мідією, Нацу з лососем",
+        "image": "images/New/SetNatsu.jpg"
+      }
+    ]
+  },
+  "menu": {
+    "categories": [
+      {
+        "id": "sety",
+        "name": "СЕТИ"
+      },
+      {
+        "id": "filadelfiya",
+        "name": "ФІЛАДЕЛЬФІЯ"
+      },
+      {
+        "id": "firmovi",
+        "name": "ФІРМОВІ РОЛИ"
+      },
+      {
+        "id": "kaliforniya",
+        "name": "КАЛІФОРНІЯ"
+      },
+      {
+        "id": "drakony",
+        "name": "ДРАКОНИ"
+      },
+      {
+        "id": "bonito",
+        "name": "БОНІТО"
+      },
+      {
+        "id": "z-krevetkami",
+        "name": "З КРЕВЕТКАМИ"
+      },
+      {
+        "id": "z-midiyami",
+        "name": "З МІДІЯМИ"
+      },
+      {
+        "id": "zapeczeni",
+        "name": "ЗАПЕЧЕНІ"
+      },
+      {
+        "id": "tempura",
+        "name": "ТЕМПУРА"
+      },
+      {
+        "id": "futomaki",
+        "name": "ФУТОМАКІ"
+      },
+      {
+        "id": "inyan",
+        "name": "ІНЬ ЯН"
+      },
+      {
+        "id": "burgers",
+        "name": "БУРГЕРИ"
+      },
+      {
+        "id": "maki",
+        "name": "МАКІ"
+      },
+      {
+        "id": "sushi",
+        "name": "СУШІ"
+      },
+      {
+        "id": "solodki-roly",
+        "name": "СОЛОДКІ РОЛИ"
+      },
+      {
+        "id": "supy",
+        "name": "СУПИ"
+      },
+      {
+        "id": "frityur",
+        "name": "ФРИТЮР"
+      },
+      {
+        "id": "salaty",
+        "name": "САЛАТИ"
+      },
+      {
+        "id": "napoi",
+        "name": "НАПОЇ"
+      }
+    ],
+    "items": [
+      {
+        "id": "sety-1",
+        "category": "sety",
+        "title": "Сет 2кг мега Щастя",
+        "price": "1700 грн",
+        "weight": "2080 г / 82 шт",
+        "ingredients": "Філадельфія, Каліфорнія, лосось, макі з огірком, крем-сир, Зелений дракон, Червоний дракон, Філадельфія манго, Такаяма з куркою, Такаяма з омлетом, Філадельфія тартар",
+        "image": "images/Sets/Set2KG.jpg"
+      },
+      {
+        "id": "sety-2",
+        "category": "sety",
+        "title": "Сет Королівський",
+        "price": "1020 грн",
+        "weight": "1100 г / 40 шт",
+        "ingredients": "Зелений дракон, Золотий дракон, Філадельфія з тунцем, Темпура з креветкою, Червоний дракон",
+        "image": "images/Sets/SetKorolivkiy.jpg"
+      },
+      {
+        "id": "sety-3",
+        "category": "sety",
+        "title": "Сет Філадельфія мікс",
+        "price": "800 грн",
+        "weight": "920 г / 32 шт",
+        "ingredients": "Філадельфія, Філадельфія з вугрем, Філадельфія з копченим лососем, Філадельфія з тунцем",
+        "image": "images/Sets/FilaMix.jpg"
+      },
+      {
+        "id": "sety-4",
+        "category": "sety",
+        "title": "Сет Кохання",
+        "price": "1150 грн",
+        "weight": "1300 г / 48 шт",
+        "ingredients": "Філадельфія манго, Філадельфія з чукою, Чедер з лососем, Каліфорнія масаго, Каліфорнія, Червоний дракон",
+        "image": "images/Sets/SetKohannya.jpg"
+      },
+      {
+        "id": "sety-5",
+        "category": "sety",
+        "title": "Сет Відпочинок",
+        "price": "1290 грн",
+        "weight": "1500 г / 60 шт",
+        "ingredients": "Філадельфія манго, Філадельфія з чукою, Такаяма з крем-сиром, макі зі смаженим лососем, Каліфорнія хай, Зелений дракон, Каліфорнія масаго, лосось",
+        "image": "images/Sets/SetVidpochynok.jpg"
+      },
+      {
+        "id": "sety-6",
+        "category": "sety",
+        "title": "Сет Осака",
+        "price": "890 грн",
+        "weight": "1050 г / 44 шт",
+        "ingredients": "Каліфорнія з тунцем, Філадельфія, Чедер з лососем, Такаяма з крабом, макі з огірком, лосось",
+        "image": "images/Sets/SetOsaka.jpg"
+      },
+      {
+        "id": "sety-7",
+        "category": "sety",
+        "title": "Сет Копчений XXL",
+        "price": "1065 грн",
+        "weight": "1245 г / 46 шт",
+        "ingredients": "Філадельфія з копченим лососем, Філадельфія максі з копченим лососем, Боніто з копченим лососем, Каліфорнія з копченим лососем, Чедер з копченим лососем, макі з копченим лососем",
+        "image": "images/Sets/SetKopcheniyXXL.jpg"
+      },
+      {
+        "id": "sety-8",
+        "category": "sety",
+        "title": "Сет Я це люблю",
+        "price": "1050 грн",
+        "weight": "1200 г / 52 шт",
+        "ingredients": "Філадельфія з омлетом, Каліфорнія, Такаяма з куркою, Такаяма з крем-сиром, Зелений дракон, омлет, лосось",
+        "image": "images/Sets/SetYaTseLyublyu.jpg"
+      },
+      {
+        "id": "sety-9",
+        "category": "sety",
+        "title": "Сет Сан Йорокобі",
+        "price": "590 грн",
+        "weight": "690 г / 24 шт",
+        "ingredients": "Філадельфія, Авоманг, Каліфорнія з крем-сиром",
+        "image": "images/Sets/SetSanYorokobi.jpg"
+      },
+      {
+        "id": "sety-10",
+        "category": "sety",
+        "title": "Сет Весна",
+        "price": "900 грн",
+        "weight": "1050 г / 40 шт",
+        "ingredients": "Філадельфія, Філадельфія з чукою, Такаяма з крем-сиром, Такаяма з омлетом, Зелений дракон",
+        "image": "images/Sets/SetVesna.jpg"
+      },
+      {
+        "id": "sety-11",
+        "category": "sety",
+        "title": "Сет Токіо",
+        "price": "900 грн",
+        "weight": "1040 г / 38 шт",
+        "ingredients": "Юма, Чіз рол, Філадельфія з чукою, Інь Ян №2, Сенсей",
+        "image": "images/Sets/SetTokio.jpg"
+      },
+      {
+        "id": "sety-12",
+        "category": "sety",
+        "title": "Сет Нацу дей",
+        "price": "790 грн",
+        "weight": "625 г",
+        "ingredients": "Нацу з тунцем, Нацу з вугрем, Нацу з креветкою, Нацу з мідією, Нацу з лососем",
+        "image": "images/Sets/SetNatsuDay.jpg"
+      },
+      {
+        "id": "sety-13",
+        "category": "sety",
+        "title": "Сет Пінний",
+        "price": "575 грн",
+        "weight": "615 г / 24 шт",
+        "ingredients": "Філадельфія з копченим лососем, Боніто з копченим лососем, Каліфорнія з копченим лососем",
+        "image": "images/Sets/SetPinnuy.jpg"
+      },
+      {
+        "id": "sety-14",
+        "category": "sety",
+        "title": "Сет Футомакі",
+        "price": "930 грн",
+        "weight": "970 г / 40 шт",
+        "ingredients": "Футомакі з креветкою, Футомакі з куркою, Футомакі з крем-сиром, Футомакі з крабом, Футомакі з лососем",
+        "image": "images/Sets/SetFutomaki.jpg"
+      },
+      {
+        "id": "sety-15",
+        "category": "sety",
+        "title": "Сет Міні бос",
+        "price": "590 грн",
+        "weight": "850 г / 48 шт",
+        "ingredients": "Лосось, макі з огірком, омлет, крабові палички, крем-сир, макі з чукою, макі зі смаженим лососем, макі з авокадо",
+        "image": "images/Sets/SetMiniBoss.jpg"
+      },
+      {
+        "id": "sety-16",
+        "category": "sety",
+        "title": "Сет Лососевий рай",
+        "price": "870 грн",
+        "weight": "1100 г / 38 шт",
+        "ingredients": "Філадельфія, Філадельфія міні, Філадельфія максі, Філадельфія з омлетом, лосось",
+        "image": "images/Sets/SetLososeviyRai.jpg"
+      },
+      {
+        "id": "sety-17",
+        "category": "sety",
+        "title": "Сет Темпура",
+        "price": "830 грн",
+        "weight": "1060 г / 32 шт",
+        "ingredients": "Темпура з крабом, Темпура з вугрем, Темпура з креветкою, Темпура з лососем",
+        "image": "images/Sets/SetTempura.jpg"
+      },
+      {
+        "id": "sety-18",
+        "category": "sety",
+        "title": "Сет Три дракони",
+        "price": "640 грн",
+        "weight": "650 г / 24 шт",
+        "ingredients": "Червоний дракон, Зелений дракон, Золотий дракон",
+        "image": "images/Sets/Set3Drakony.jpg"
+      },
+      {
+        "id": "sety-19",
+        "category": "sety",
+        "title": "Сет Такаяма фо",
+        "price": "810 грн",
+        "weight": "860 г / 32 шт",
+        "ingredients": "Такаяма з омлетом, Такаяма з крабом, Такаяма з крем-сиром, Такаяма з лососем",
+        "image": "images/Sets/SetTakayamaPho.jpg"
+      },
+      {
+        "id": "sety-20",
+        "category": "sety",
+        "title": "Сет Боніто",
+        "price": "550 грн",
+        "weight": "600 г / 24 шт",
+        "ingredients": "Боніто з вугрем, Боніто з лососем, Боніто зі смаженим лососем",
+        "image": "images/Sets/SetBonito.jpg"
+      },
+      {
+        "id": "sety-21",
+        "category": "sety",
+        "title": "Сет Мачі макі",
+        "price": "445 грн",
+        "weight": "550 г / 24 шт",
+        "ingredients": "Макі з крем-сиром і чедером, макі зі смаженим лососем і чедером, макі з омлетом і чедером, макі з крабовими паличками і чедером",
+        "image": "images/Sets/SetMachiMaki.jpg"
+      },
+      {
+        "id": "sety-22",
+        "category": "sety",
+        "title": "Сет Супер дей",
+        "price": "700 грн",
+        "weight": "800 г / 36 шт",
+        "ingredients": "Філадельфія міні, Каліфорнія, Футомакі з куркою, макі з огірком, лосось",
+        "image": "images/Sets/SetSuperDay.jpg"
+      },
+      {
+        "id": "sety-23",
+        "category": "sety",
+        "title": "Сет Гуд дей",
+        "price": "580 грн",
+        "weight": "600 г / 24 шт",
+        "ingredients": "Філадельфія міні, Каліфорнія, Футомакі з омлетом",
+        "image": "images/Sets/SetGoodDay.jpg"
+      },
+      {
+        "id": "sety-24",
+        "category": "sety",
+        "title": "Сет Макі сторіс",
+        "price": "295 грн",
+        "weight": "430 г / 24 шт",
+        "ingredients": "Макі з огірком, лосось, макі з омлетом, макі з крабовими паличками",
+        "image": "images/Sets/SetMakiStoris.jpg"
+      },
+      {
+        "id": "filadelfiya-1",
+        "category": "filadelfiya",
+        "title": "Філадельфія максі",
+        "price": "245 грн",
+        "weight": "320 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, лосось",
+        "image": "images/Filadelfiya/FiladelfiyaMaxi.jpg"
+      },
+      {
+        "id": "filadelfiya-2",
+        "category": "filadelfiya",
+        "title": "Філадельфія",
+        "price": "210 грн",
+        "weight": "250 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, лосось",
+        "image": "images/Filadelfiya/Filadelfiya.jpg"
+      },
+      {
+        "id": "filadelfiya-3",
+        "category": "filadelfiya",
+        "title": "Філадельфія міні",
+        "price": "175 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, лосось",
+        "image": "images/Filadelfiya/FiladelfiyaMini.jpg"
+      },
+      {
+        "id": "filadelfiya-4",
+        "category": "filadelfiya",
+        "title": "Філадельфія з омлетом",
+        "price": "205 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, омлет, лосось",
+        "image": "images/Filadelfiya/FiladelfiyaZOmletom.jpg"
+      },
+      {
+        "id": "filadelfiya-5",
+        "category": "filadelfiya",
+        "title": "Філадельфія максі з копченим лососем",
+        "price": "245 грн",
+        "weight": "310 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, копчений лосось",
+        "image": "images/Filadelfiya/FiladelfiyaMaxiZKopchenimLososem.jpg"
+      },
+      {
+        "id": "filadelfiya-6",
+        "category": "filadelfiya",
+        "title": "Філадельфія з копченим лососем",
+        "price": "205 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, крем-сир ФІладельфІя, огІрок, копчений лосось",
+        "image": "images/Filadelfiya/FiladelfiyaZKopchenimLososem.jpg"
+      },
+      {
+        "id": "filadelfiya-7",
+        "category": "filadelfiya",
+        "title": "Огата Філадельфія",
+        "price": "485 грн",
+        "weight": "610 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, лосось",
+        "image": "images/Filadelfiya/OgataFiladelfiya.jpg"
+      },
+      {
+        "id": "filadelfiya-8",
+        "category": "filadelfiya",
+        "title": "Філадельфія манго",
+        "price": "205 грн",
+        "weight": "240 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, манго, соус унагі",
+        "image": "images/Filadelfiya/FiladelfiyaMango.jpg"
+      },
+      {
+        "id": "filadelfiya-9",
+        "category": "filadelfiya",
+        "title": "Філадельфія з чукою",
+        "price": "195 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, лосось, чука",
+        "image": "images/Filadelfiya/FiladelfiyaZChukoy.jpg"
+      },
+      {
+        "id": "filadelfiya-10",
+        "category": "filadelfiya",
+        "title": "Філадельфія з вугрем",
+        "price": "215 грн",
+        "weight": "240 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, вугор, соус унагі",
+        "image": "images/Filadelfiya/FiladelfiyaZVugrem.jpg"
+      },
+      {
+        "id": "filadelfiya-11",
+        "category": "filadelfiya",
+        "title": "Філадельфія з тунцем",
+        "price": "205 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, тунець",
+        "image": "images/Filadelfiya/FiladelfiyaZTuncom.jpg"
+      },
+      {
+        "id": "filadelfiya-12",
+        "category": "filadelfiya",
+        "title": "Філадельфія тартар",
+        "price": "195 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, лосось, соус спайсі, соус унагі",
+        "image": "images/Filadelfiya/FiladelfiyaTartar.jpg"
+      },
+      {
+        "id": "firmovi-1",
+        "category": "firmovi",
+        "title": "Рол «Чедер» з копченим лососем",
+        "price": "205 грн",
+        "weight": "220 г",
+        "ingredients": "Рис, норі, крем-сир Філадельфія, копчений лосось, чедер, соус унагі",
+        "image": "images/Firmovi/RolChederZKopchenimLososem.jpg"
+      },
+      {
+        "id": "firmovi-2",
+        "category": "firmovi",
+        "title": "Рол з креветкою та сиром",
+        "price": "220 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, креветки, ікра масаго",
+        "image": "images/Firmovi/RolZKrevetkoyuTaSirom.jpg"
+      },
+      {
+        "id": "firmovi-3",
+        "category": "firmovi",
+        "title": "Рол з манго та сиром",
+        "price": "165 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, манго, соус унагі",
+        "image": "images/Firmovi/RolZMangoyuTaSirom.jpg"
+      },
+      {
+        "id": "firmovi-4",
+        "category": "firmovi",
+        "title": "Рол з авокадо та сиром",
+        "price": "165 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, авокадо, соус унагі",
+        "image": "images/Firmovi/RolZAvokadoyuTaSirom.jpg"
+      },
+      {
+        "id": "firmovi-5",
+        "category": "firmovi",
+        "title": "Рол «Масаго» з тунцем",
+        "price": "210 грн",
+        "weight": "180 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, тунець, ікра масаго",
+        "image": "images/Firmovi/RolMasagoZTuncom.jpg"
+      },
+      {
+        "id": "firmovi-6",
+        "category": "firmovi",
+        "title": "Чіз рол",
+        "price": "195 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, лосось, авокадо, крем-сир Філадельфія, соус унагі",
+        "image": "images/Firmovi/ChizRol.jpg"
+      },
+      {
+        "id": "firmovi-7",
+        "category": "firmovi",
+        "title": "Рол «Авоманг» з креветкою",
+        "price": "205 грн",
+        "weight": "225 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, манго, креветка, авокадо, соус унагі",
+        "image": "images/Firmovi/RolAvomangZKrevetkoyu.jpg"
+      },
+      {
+        "id": "firmovi-8",
+        "category": "firmovi",
+        "title": "Рол «Юма» з філадельфією та фореллю",
+        "price": "185 грн",
+        "weight": "195 г",
+        "ingredients": "Норі, рис, кунжут, крем-сир Філадельфія, форель",
+        "image": "images/Firmovi/RolYumaZFiladelfiyeyuTaForellyu.jpg"
+      },
+      {
+        "id": "firmovi-9",
+        "category": "firmovi",
+        "title": "Рол «Квітень» з філадельфією та авокадо",
+        "price": "205 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, чедер, авокадо, соус унагі",
+        "image": "images/Firmovi/RolKvitеньZFiladelfiyeyuTaAvokadoyu.jpg"
+      },
+      {
+        "id": "firmovi-10",
+        "category": "firmovi",
+        "title": "Рол «Від шефа»",
+        "price": "235 грн",
+        "weight": "250 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, авокадо, вугор, лосось, кунжут, соус унагі",
+        "image": "images/Firmovi/RolVidShefa.jpg"
+      },
+      {
+        "id": "firmovi-11",
+        "category": "firmovi",
+        "title": "Рол «Сенсей» з філадельфією та чукою",
+        "price": "220 грн",
+        "weight": "255 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, лосось, чука, соус унагі",
+        "image": "images/Firmovi/RolSensheyZFiladelfiyeyuTaChukoyu.jpg"
+      },
+      {
+        "id": "firmovi-12",
+        "category": "firmovi",
+        "title": "Рол «Сакура» з креветкою, манго та лососем",
+        "price": "250 грн",
+        "weight": "295 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, креветка, манго, лосось, соус унагі, кунжут",
+        "image": "images/Firmovi/RolSakuraZKrevetkoyuMangoyuTaLososem.jpg"
+      },
+      {
+        "id": "firmovi-13",
+        "category": "firmovi",
+        "title": "Рол «Сонячний» з креветкою та огірком",
+        "price": "195 грн",
+        "weight": "205 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, креветка, огірок, кунжут",
+        "image": "images/Firmovi/RolSonjachniyZKrevetkoyuTaOgirkom.jpg"
+      },
+      {
+        "id": "firmovi-14",
+        "category": "firmovi",
+        "title": "Рол «Нацу» з лососем та манго",
+        "price": "170 грн",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, манго, лосось, ікра масаго, соус унагі",
+        "image": "images/Firmovi/RolNatsZLososemTaMangoyu.jpg"
+      },
+      {
+        "id": "firmovi-15",
+        "category": "firmovi",
+        "title": "Рол «Нацу» з креветкою та манго",
+        "price": "170 грн",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, манго, креветка, ікра масаго, соус унагɪ",
+        "image": "images/Firmovi/RolNatsZKrevetkoyuTaMangoyu.jpg"
+      },
+      {
+        "id": "firmovi-16",
+        "category": "firmovi",
+        "title": "Рол «Нацу» з тунцем та манго",
+        "price": "170 грн",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, манго, тунець, ікра масаго, соус унагі",
+        "image": "images/Firmovi/RolNatsZTuncomTaMangoyu.jpg"
+      },
+      {
+        "id": "firmovi-17",
+        "category": "firmovi",
+        "title": "Рол «Нацу» з вугрем та авокадо",
+        "price": "170 грн",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, авокадо, вугор, ікра масаго, соус унагі",
+        "image": "images/Firmovi/RolNatsZVugremTaAvokadoyu.jpg"
+      },
+      {
+        "id": "firmovi-18",
+        "category": "firmovi",
+        "title": "Рол «Нацу» з мідією та авокадо",
+        "price": "170 грн",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, авокадо, мідія, ікра масаго, соус унагі",
+        "image": "images/Firmovi/RolNatsZMidiyeyuTaAvokadoyu.jpg"
+      },
+      {
+        "id": "kaliforniya-1",
+        "category": "kaliforniya",
+        "title": "Огата Каліфорнія",
+        "price": "385 грн",
+        "weight": "395 г",
+        "ingredients": "Норі, рис, крабові палички, огірок, авокадо, соус які, соус унагі, кунжут",
+        "image": "images/Kaliforniya/OgataKaliforniya.jpg"
+      },
+      {
+        "id": "kaliforniya-2",
+        "category": "kaliforniya",
+        "title": "Каліфорнія",
+        "price": "205 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, крабові палички, огірок, авокадо, соус які, кунжут",
+        "image": "images/Kaliforniya/Kaliforniya.jpg"
+      },
+      {
+        "id": "kaliforniya-3",
+        "category": "kaliforniya",
+        "title": "Каліфорнія хай",
+        "price": "210 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, смажений лосось, кунжут, соус унагі",
+        "image": "images/Kaliforniya/KaliforniyaHay.jpg"
+      },
+      {
+        "id": "kaliforniya-4",
+        "category": "kaliforniya",
+        "title": "Каліфорнія з вугрем",
+        "price": "210 грн",
+        "weight": "190 г",
+        "ingredients": "Норі, рис, вугор, огірок, авокадо, кунжут, соус унагі",
+        "image": "images/Kaliforniya/KaliforniyaZVugrem.jpg"
+      },
+      {
+        "id": "kaliforniya-5",
+        "category": "kaliforniya",
+        "title": "Каліфорнія масаго",
+        "price": "220 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, смажений лосось, огірок, авокадо, соус які, ікра масаго",
+        "image": "images/Kaliforniya/KaliforniyaMasago.jpg"
+      },
+      {
+        "id": "kaliforniya-6",
+        "category": "kaliforniya",
+        "title": "Каліфорнія з лососем",
+        "price": "205 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, лосось, огірок, авокадо, соус які, кунжут",
+        "image": "images/Kaliforniya/KaliforniyaZLososem.jpg"
+      },
+      {
+        "id": "kaliforniya-7",
+        "category": "kaliforniya",
+        "title": "Каліфорнія фіш",
+        "price": "205 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, смажений лосось, огірок, авокадо, соус які, кунжут",
+        "image": "images/Kaliforniya/KaliforniyaFish.jpg"
+      },
+      {
+        "id": "kaliforniya-8",
+        "category": "kaliforniya",
+        "title": "Каліфорнія з копченим лососем",
+        "price": "205 грн",
+        "weight": "195 г",
+        "ingredients": "Норі, рис, копчений лосось, огірок, авокадо, соус які, кунжут",
+        "image": "images/Kaliforniya/KaliforniyaZKopchenimLososem.jpg"
+      },
+      {
+        "id": "kaliforniya-9",
+        "category": "kaliforniya",
+        "title": "Каліфорнія з тунцем",
+        "price": "205 грн",
+        "weight": "195 г",
+        "ingredients": "Норі, рис, тунець, огірок, авокадо, соус які, кунжут",
+        "image": "images/Kaliforniya/KaliforniyaZTuncom.jpg"
+      },
+      {
+        "id": "kaliforniya-10",
+        "category": "kaliforniya",
+        "title": "Каліфорнія з крем-сиром",
+        "price": "210 грн",
+        "weight": "225 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, крабові палички, огірок, ікра масаго",
+        "image": "images/Kaliforniya/KaliforniyaZKremSytom.jpg"
+      },
+      {
+        "id": "drakony-1",
+        "category": "drakony",
+        "title": "Червоний дракон",
+        "price": "235 грн",
+        "weight": "230 г",
+        "ingredients": "Норі, рис, огірок, авокадо, вугор, кунжут, соус унагі, лосось, соус які",
+        "image": "images/Drakony/ChervoniyDrakon.jpg"
+      },
+      {
+        "id": "drakony-2",
+        "category": "drakony",
+        "title": "Зелений дракон",
+        "price": "215 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, смажений лосось, огірок, соус які, крабові палички, авокадо, кунжут, соус унагі",
+        "image": "images/Drakony/ZeluyiDrakon.jpg"
+      },
+      {
+        "id": "drakony-3",
+        "category": "drakony",
+        "title": "Золотий дракон",
+        "price": "245 грн",
+        "weight": "230 г",
+        "ingredients": "Норі, рис, авокадо, огірок, смажений лосось, соус які, вугор, кунжут, соус унагі",
+        "image": "images/Drakony/ZolotiyDrakon.jpg"
+      },
+      {
+        "id": "drakony-4",
+        "category": "drakony",
+        "title": "Королівський дракон",
+        "price": "235 грн",
+        "weight": "255 г",
+        "ingredients": "Норі, рис, креветки, авокадо, чука, крем-сир Філадельфія, лосось, соус унагі",
+        "image": "images/Drakony/KorolivskiyDrakon.jpg"
+      },
+      {
+        "id": "bonito-1",
+        "category": "bonito",
+        "title": "Боніто з копченим лососем",
+        "price": "195 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, копчений лосось, авокадо, стружка тунця",
+        "image": "images/Bonito/BonitoZKopchenimLososem.jpg"
+      },
+      {
+        "id": "bonito-2",
+        "category": "bonito",
+        "title": "Боніто з лососем",
+        "price": "195 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, лосось, авокадо, стружка тунця",
+        "image": "images/Bonito/BonitoZLososem.jpg"
+      },
+      {
+        "id": "bonito-3",
+        "category": "bonito",
+        "title": "Боніто фіш",
+        "price": "195 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, смажений лосось, авокадо, стружка тунця",
+        "image": "images/Bonito/BonitoFish.jpg"
+      },
+      {
+        "id": "bonito-4",
+        "category": "bonito",
+        "title": "Боніто з вугрем",
+        "price": "195 грн",
+        "weight": "200 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, вугор, авокадо, стружка тунця",
+        "image": "images/Bonito/BonitoZVugrem.jpg"
+      },
+      {
+        "id": "z-krevetkami-1",
+        "category": "z-krevetkami",
+        "title": "Темпура з креветкою",
+        "price": "205 грн",
+        "weight": "260 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, креветки, кляр, паніровка панко, соус які",
+        "image": "images/ZKrevetkami/TempuraZKrevetkoyu.jpg"
+      },
+      {
+        "id": "z-krevetkami-2",
+        "category": "z-krevetkami",
+        "title": "Рол «Авоманг» з креветкою",
+        "price": "205 грн",
+        "weight": "225 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, манго, креветка, авокадо, соус унагі",
+        "image": "images/ZKrevetkami/AvomangZKrevetkoyu.jpg"
+      },
+      {
+        "id": "z-krevetkami-3",
+        "category": "z-krevetkami",
+        "title": "Креветка з сиром",
+        "price": "220 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, креветки, ікра масаго",
+        "image": "images/ZKrevetkami/KrevetkaZSytom.jpg"
+      },
+      {
+        "id": "z-krevetkami-4",
+        "category": "z-krevetkami",
+        "title": "Королівський дракон",
+        "price": "235 грн",
+        "weight": "255 г",
+        "ingredients": "Норі, рис, креветки, авокадо, чука, крем-сир Філадельфія, лосось, соус унагі",
+        "image": "images/Drakony/KorolivskiyDrakon.jpg"
+      },
+      {
+        "id": "z-krevetkami-5",
+        "category": "z-krevetkami",
+        "title": "Рол «Сакура» з креветкою, лососем та манго",
+        "price": "250 грн",
+        "weight": "295 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, креветка, манго, лосось, соус унагі, кунжут",
+        "image": "images/ZKrevetkami/SakuraZKrevetkoyuLososemTMango.jpg"
+      },
+      {
+        "id": "z-krevetkami-6",
+        "category": "z-krevetkami",
+        "title": "Рол «Сонячний» з креветкою",
+        "price": "195 грн",
+        "weight": "205 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, креветка, огірок, кунжут",
+        "image": "images/ZKrevetkami/SonyachniyZKrevetkoyu.jpg"
+      },
+      {
+        "id": "z-krevetkami-7",
+        "category": "z-krevetkami",
+        "title": "Рол «Такаяма» з креветкою",
+        "price": "205 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, огірок, креветка, сирний заміс, соус унагі",
+        "image": "images/ZKrevetkami/TakayamaZKrevetkoyu.jpg"
+      },
+      {
+        "id": "z-krevetkami-8",
+        "category": "z-krevetkami",
+        "title": "Хоткраб з креветками",
+        "price": "205 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, огірок, гостра крабова шапочка, соус унагі, кунжут, креветки",
+        "image": "images/ZKrevetkami/HotkrabZKrevetkami.jpg"
+      },
+      {
+        "id": "z-krevetkami-9",
+        "category": "z-krevetkami",
+        "title": "Бургер панко з креветками",
+        "price": "255 грн",
+        "weight": "350 г",
+        "ingredients": "Додаються рукавички",
+        "image": "images/ZKrevetkami/HotkrabZKrevetkami.jpg"
+      },
+      {
+        "id": "z-midiyami-1",
+        "category": "z-midiyami",
+        "title": "Рол «Такаяма» з мідіями",
+        "price": "205 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, огірок, сирний заміс, соус унагі",
+        "image": "images/ZMidiyami/TakayamaZMidiyami.jpg"
+      },
+      {
+        "id": "z-midiyami-2",
+        "category": "z-midiyami",
+        "title": "Хоткраб з мідіями",
+        "price": "205 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, огірок, крабовий заміс, соус унагі",
+        "image": "images/ZMidiyami/HotkrabZMidiyami.jpg"
+      },
+      {
+        "id": "z-midiyami-3",
+        "category": "z-midiyami",
+        "title": "Макі з мідією",
+        "price": "100 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, мідія, соус унагі",
+        "image": "images/ZMidiyami/MakiZMidiyami.jpg"
+      },
+      {
+        "id": "z-midiyami-4",
+        "category": "z-midiyami",
+        "title": "Рол «Нацу» з мідією та авокадо",
+        "price": "170 грн",
+        "weight": "125 г",
+        "ingredients": "Норі, крем-сир Філадельфія, авокадо, мідія, ікра масаго, соус унагі",
+        "image": "images/ZMidiyami/NatsuZMidiyamiTAvokado.jpg"
+      },
+      {
+        "id": "zapeczeni-1",
+        "category": "zapeczeni",
+        "title": "Рол «Такаяма» з куркою",
+        "price": "225 грн",
+        "weight": "215 г",
+        "ingredients": "Норі, рис, огірок, смажене філе курки, сирна шапочка, соус унагі",
+        "image": "images/Zapeczeni/TakayamaZKurkoyu.jpg"
+      },
+      {
+        "id": "zapeczeni-2",
+        "category": "zapeczeni",
+        "title": "Рол «Такаяма» з крабовими паличками",
+        "price": "225 грн",
+        "weight": "215 г",
+        "ingredients": "Норі, рис, огірок, крабові палички, сирна шапочка, соус унагі",
+        "image": "images/Zapeczeni/TakayamaZKrabovymiPalichkami.jpg"
+      },
+      {
+        "id": "zapeczeni-3",
+        "category": "zapeczeni",
+        "title": "Рол «Такаяма» з омлетом",
+        "price": "215 грн",
+        "weight": "215 г",
+        "ingredients": "Норі, рис, огірок, омлет, сирна шапочка, соус унагі",
+        "image": "images/Zapeczeni/TakayamaZOmletom.jpg"
+      },
+      {
+        "id": "zapeczeni-4",
+        "category": "zapeczeni",
+        "title": "Рол «Такаяма» з крем-сиром",
+        "price": "225 грн",
+        "weight": "215 г",
+        "ingredients": "Норі, рис, огірок, крем-сир Філадельфія, сирна шапочка, соус унагі",
+        "image": "images/Zapeczeni/TakayamaZKrem-sirom.jpg"
+      },
+      {
+        "id": "zapeczeni-5",
+        "category": "zapeczeni",
+        "title": "Рол «Такаяма» з вугрем",
+        "price": "225 грн",
+        "weight": "215 г",
+        "ingredients": "Норі, рис, огірок, вугор, сирна шапочка, соус унагі",
+        "image": "images/Zapeczeni/TakayamaZVugrem.jpg"
+      },
+      {
+        "id": "zapeczeni-6",
+        "category": "zapeczeni",
+        "title": "Рол «Такаяма» з креветкою",
+        "price": "225 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, огірок, креветка, сирний заміс, соус унагі",
+        "image": "images/Zapeczeni/TakayamaZKrevetkoyu.jpg"
+      },
+      {
+        "id": "zapeczeni-7",
+        "category": "zapeczeni",
+        "title": "Рол «Такаяма» з тунцем",
+        "price": "225 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, огірок, тунець, сирний заміс, соус унагі",
+        "image": "images/Zapeczeni/TakayamaZTuncom.jpg"
+      },
+      {
+        "id": "zapeczeni-8",
+        "category": "zapeczeni",
+        "title": "Рол «Такаяма» з лососем",
+        "price": "225 грн",
+        "weight": "215 г",
+        "ingredients": "Норі, рис, огірок, смажений лосось, сирна шапочка, соус унагі",
+        "image": "images/Zapeczeni/akayamaZLososem.jpg"
+      },
+      {
+        "id": "zapeczeni-9",
+        "category": "zapeczeni",
+        "title": "Рол «Такаяма» з мідіями",
+        "price": "215 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, огірок, сирний заміс, соус унагі",
+        "image": "images/Zapeczeni/TakayamaZMidiyami.jpg"
+      },
+      {
+        "id": "zapeczeni-10",
+        "category": "zapeczeni",
+        "title": "Хоткраб з омлетом",
+        "price": "215 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, огірок, гостра крабова шапочка, соус унагі, кунжут, омлет",
+        "image": "images/Zapeczeni/HotkrabZOmletom.jpg"
+      },
+      {
+        "id": "zapeczeni-11",
+        "category": "zapeczeni",
+        "title": "Хоткраб з вугрем",
+        "price": "225 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, огірок, гостра крабова шапочка, соус унагі, кунжут, вугор",
+        "image": "images/Zapeczeni/HotkrabZVugrem.jpg"
+      },
+      {
+        "id": "zapeczeni-12",
+        "category": "zapeczeni",
+        "title": "Хоткраб з куркою",
+        "price": "225 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, огірок, гостра крабова шапочка, соус унагі, кунжут, куряче філе",
+        "image": "images/Zapeczeni/HotkrabZKurkoyu.jpg"
+      },
+      {
+        "id": "zapeczeni-13",
+        "category": "zapeczeni",
+        "title": "Хоткраб з тунцем",
+        "price": "225 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, огірок, гостра крабова шапочка, соус унагі, кунжут, тунець",
+        "image": "images/Zapeczeni/HotkrabZTuncom.jpg"
+      },
+      {
+        "id": "zapeczeni-14",
+        "category": "zapeczeni",
+        "title": "Хоткраб з крем-сиром",
+        "price": "225 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, огірок, гостра крабова шапочка, соус унагі, кунжут, крем-сир Філадельфія",
+        "image": "images/Zapeczeni/HotkrabZKrem-sirom.jpg"
+      },
+      {
+        "id": "zapeczeni-15",
+        "category": "zapeczeni",
+        "title": "Хоткраб з креветками",
+        "price": "225 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, огірок, гостра крабова шапочка, соус унагі, кунжут, креветки",
+        "image": "images/Zapeczeni/HotkrabZKrevetkoyu.jpg"
+      },
+      {
+        "id": "zapeczeni-16",
+        "category": "zapeczeni",
+        "title": "Хоткраб з лососем",
+        "price": "225 грн",
+        "weight": "210 г",
+        "ingredients": "Норі, рис, огірок, гостра крабова шапочка, соус унагі, кунжут, лосось",
+        "image": "images/Zapeczeni/HotkrabZLososem.jpg"
+      },
+      {
+        "id": "zapeczeni-17",
+        "category": "zapeczeni",
+        "title": "Хоткраб з мідіями",
+        "price": "215 грн",
+        "weight": "220 г",
+        "ingredients": "Норі, рис, огірок, крабовий заміс, соус унагі",
+        "image": "images/Zapeczeni/HotkrabZMidiyami.jpg"
+      },
+      {
+        "id": "zapeczeni-18",
+        "category": "zapeczeni",
+        "title": "Сет Мачі макі",
+        "price": "445 грн",
+        "weight": "550 г / 24 шт",
+        "ingredients": "Макі з крем-сиром і чедером, макі зі смаженим лососем і чедером, макі з омлетом і чедером, макі з крабовими паличками і чедером",
+        "image": "images/Zapeczeni/SetMachiMaki.jpg"
+      },
+      {
+        "id": "zapeczeni-19",
+        "category": "zapeczeni",
+        "title": "Сет Такаяма фо",
+        "price": "810 грн",
+        "weight": "860 г / 32 шт",
+        "ingredients": "Такаяма з омлетом, Такаяма з крабовими паличками, Такаяма з крем-сиром, Такаяма з лососем",
+        "image": "images/Zapeczeni/SetTakayamaFo.jpg"
+      },
+      {
+        "id": "tempura-1",
+        "category": "tempura",
+        "title": "Темпура з вугрем",
+        "price": "225 грн",
+        "weight": "260 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, крабові палички, кляр, паніровка панко, соус унагі",
+        "image": "images/Tempura/TempuraZVugrem.jpg"
+      },
+      {
+        "id": "tempura-2",
+        "category": "tempura",
+        "title": "Темпура з креветкою",
+        "price": "225 грн",
+        "weight": "260 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, креветки, кляр, паніровка панко, соус які",
+        "image": "images/Tempura/TempuraZKrevetkoyu.jpg"
+      },
+      {
+        "id": "tempura-3",
+        "category": "tempura",
+        "title": "Темпура з лососем",
+        "price": "225 грн",
+        "weight": "270 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, лосось, кляр, паніровка панко",
+        "image": "images/Tempura/TempuraZLososem.jpg"
+      },
+      {
+        "id": "tempura-4",
+        "category": "tempura",
+        "title": "Темпура з крабовими паличками",
+        "price": "225 грн",
+        "weight": "270 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, огірок, крабові палички, кляр, паніровка панко, соус які",
+        "image": "images/Tempura/TempuraZKrabovymiPali4kami.jpg"
+      },
+      {
+        "id": "tempura-5",
+        "category": "tempura",
+        "title": "Сет Темпура",
+        "price": "830 грн",
+        "weight": "1060 г / 32 шт",
+        "ingredients": "Темпура з крабом, Темпура з вугрем, Темпура з креветкою, Темпура з лососем",
+        "image": "images/Tempura/SetTempura.jpg"
+      },
+      {
+        "id": "futomaki-1",
+        "category": "futomaki",
+        "title": "Футомакі з куркою",
+        "price": "195 грн",
+        "weight": "195 г",
+        "ingredients": "Норі, рис, смажене куряче філе, огірок, салат, соус унагі, соус спайсі",
+        "image": "images/Futomaki/FutomakiZKurkoyu.jpg"
+      },
+      {
+        "id": "futomaki-2",
+        "category": "futomaki",
+        "title": "Футомакі з креветкою",
+        "price": "195 грн",
+        "weight": "185 г",
+        "ingredients": "Норі, рис, креветка, огірок, салат, соус унагі, соус спайсі",
+        "image": "images/Futomaki/FutomakiZKrevetkoyu.jpg"
+      },
+      {
+        "id": "futomaki-3",
+        "category": "futomaki",
+        "title": "Футомакі з омлетом",
+        "price": "195 грн",
+        "weight": "195 г",
+        "ingredients": "Норі, рис, омлет, огірок, салат, соус унагі, соус спайсі",
+        "image": "images/Futomaki/FutomakiZOmletom.jpg"
+      },
+      {
+        "id": "futomaki-4",
+        "category": "futomaki",
+        "title": "Футомакі з крабовими паличками",
+        "price": "195 грн",
+        "weight": "195 г",
+        "ingredients": "Норі, рис, крабові палички, огірок, салат, соус унагі, соус спайсі",
+        "image": "images/Futomaki/FutomakiZKrabovymiPali4kami.jpg"
+      },
+      {
+        "id": "futomaki-5",
+        "category": "futomaki",
+        "title": "Футомакі з крем-сиром",
+        "price": "195 грн",
+        "weight": "195 г",
+        "ingredients": "Норі, рис, крем-сир, огірок, салат, соус унагі, соус спайсі",
+        "image": "images/Futomaki/FutomakiZKremSytom.jpg"
+      },
+      {
+        "id": "futomaki-6",
+        "category": "futomaki",
+        "title": "Сет Футомакі",
+        "price": "930 грн",
+        "weight": "970 г / 40 шт",
+        "ingredients": "Футомакі з креветкою, Футомакі з куркою, Футомакі з крем-сиром, Футомакі з крабом, Футомакі з лососем",
+        "image": "images/Futomaki/SetFutomaki.jpg"
+      },
+      {
+        "id": "inyan-1",
+        "category": "inyan",
+        "title": "Рол «Інь Ян» з лососем та огірком",
+        "price": "125 грн",
+        "weight": "160 г",
+        "ingredients": "Норі, рис, огірок, кунжут, лосось, соус унагі",
+        "image": "images/Inyan/RolInYanZLososemTaOgirkom.jpg"
+      },
+      {
+        "id": "inyan-2",
+        "category": "inyan",
+        "title": "Рол «Інь Ян» з філадельфією та лососем",
+        "price": "145 грн",
+        "weight": "180 г",
+        "ingredients": "Норі, рис, лосось, крем-сир Філадельфія, соус унагі",
+        "image": "images/Inyan/RolInYanZFilyadelfieyuTaLososem.jpg"
+      },
+      {
+        "id": "inyan-3",
+        "category": "inyan",
+        "title": "Рол «Інь Ян» з філадельфією та вугрем",
+        "price": "145 грн",
+        "weight": "170 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія, вугор, кунжут, соус унагі",
+        "image": "images/Inyan/RolInYanZFilyadelfieyuTaVugrem.jpg"
+      },
+      {
+        "id": "inyan-4",
+        "category": "inyan",
+        "title": "Рол «Інь Ян» з тигровими креветками та філадельфією",
+        "price": "145 грн",
+        "weight": "180 г",
+        "ingredients": "Норі, рис, тигрові креветки, крем-сир Філадельфія, соус унагі",
+        "image": "images/Inyan/RolInYanZTigrovimiKrevetkamiTaFilyadelfieyu.jpg"
+      },
+      {
+        "id": "maki-1",
+        "category": "maki",
+        "title": "Макі з тунцем",
+        "price": "90 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, тунець",
+        "image": "images/Maki/MakiZTuncom.jpg"
+      },
+      {
+        "id": "maki-2",
+        "category": "maki",
+        "title": "Макі з мідією",
+        "price": "100 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, мідія, соус унагі",
+        "image": "images/Maki/MakiZMidiyeyu.jpg"
+      },
+      {
+        "id": "maki-3",
+        "category": "maki",
+        "title": "Макі з чукою",
+        "price": "80 грн",
+        "weight": "100 г",
+        "ingredients": "Норі, рис, чука",
+        "image": "images/Maki/MakiZChukoyu.jpg"
+      },
+      {
+        "id": "maki-4",
+        "category": "maki",
+        "title": "Макі з крабовими паличками",
+        "price": "80 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, крабові палички",
+        "image": "images/Maki/MakiZKrabovymiPali4kami.jpg"
+      },
+      {
+        "id": "maki-5",
+        "category": "maki",
+        "title": "Макі з огірком",
+        "price": "60 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, огірок, кунжут, соус унагі",
+        "image": "images/Maki/MakiZOgirkom.jpg"
+      },
+      {
+        "id": "maki-6",
+        "category": "maki",
+        "title": "Макі з лососем",
+        "price": "90 грн",
+        "weight": "100 г",
+        "ingredients": "Норі, рис, лосось",
+        "image": "images/Maki/MakiZLososem.jpg"
+      },
+      {
+        "id": "maki-7",
+        "category": "maki",
+        "title": "Макі з вугрем",
+        "price": "95 грн",
+        "weight": "100 г",
+        "ingredients": "Норі, рис, вугор, кунжут, соус унагі",
+        "image": "images/Maki/MakiZVugrem.jpg"
+      },
+      {
+        "id": "maki-8",
+        "category": "maki",
+        "title": "Макі з авокадо",
+        "price": "80 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, авокадо, соус унагі",
+        "image": "images/Maki/MakiZAvokado.jpg"
+      },
+      {
+        "id": "maki-9",
+        "category": "maki",
+        "title": "Макі зі смаженим лососем",
+        "price": "100 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, смажений лосось, соус унагі",
+        "image": "images/Maki/MakiZSmazhenimLososem.jpg"
+      },
+      {
+        "id": "maki-10",
+        "category": "maki",
+        "title": "Макі з крем-сиром",
+        "price": "85 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, крем-сир Філадельфія",
+        "image": "images/Maki/MakiZKremSytom.jpg"
+      },
+      {
+        "id": "maki-11",
+        "category": "maki",
+        "title": "Макі з омлетом",
+        "price": "75 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, омлет",
+        "image": "images/Maki/MakiZOmletom.jpg"
+      },
+      {
+        "id": "maki-12",
+        "category": "maki",
+        "title": "Макі з креветкою",
+        "price": "100 грн",
+        "weight": "100 г",
+        "ingredients": "Норі, рис, креветки, соус унагі",
+        "image": "images/Maki/MakiZKrevetkoyu.jpg"
+      },
+      {
+        "id": "maki-13",
+        "category": "maki",
+        "title": "Макі з манго",
+        "price": "85 грн",
+        "weight": "110 г",
+        "ingredients": "Норі, рис, манго, соус унагі",
+        "image": "images/Maki/MakiZMangoyu.jpg"
+      },
+      {
+        "id": "maki-14",
+        "category": "maki",
+        "title": "Макі з копченим лососем",
+        "price": "95 грн",
+        "weight": "110 г",
+        "ingredients": "Рис, норі, копчений лосось",
+        "image": "images/Maki/MakiZKopchenimLososem.jpg"
+      },
+      {
+        "id": "sushi-1",
+        "category": "sushi",
+        "title": "Суші з лососем преміум",
+        "price": "75 / 200 грн",
+        "weight": "70 / 210 г",
+        "ingredients": "Рис, лосось",
+        "image": "images/Sushi/SushiZLososemPremium.jpg"
+      },
+      {
+        "id": "sushi-2",
+        "category": "sushi",
+        "title": "Суші з лососем",
+        "price": "55 / 150 грн",
+        "weight": "30 / 90 г",
+        "ingredients": "Рис, лосось",
+        "image": "images/Sushi/SushiZLososem.jpg"
+      },
+      {
+        "id": "sushi-3",
+        "category": "sushi",
+        "title": "Суші з вугрем",
+        "price": "60 / 170 грн",
+        "weight": "30 / 90 г",
+        "ingredients": "Рис, норі, вугор, соус унагі",
+        "image": "images/Sushi/SushiZVugrem.jpg"
+      },
+      {
+        "id": "sushi-4",
+        "category": "sushi",
+        "title": "Суші з тунцем",
+        "price": "60 / 160 грн",
+        "weight": "40 / 120 г",
+        "ingredients": "Рис, тунець",
+        "image": "images/Sushi/SushiZTuncom.jpg"
+      },
+      {
+        "id": "solodki-roly-1",
+        "category": "solodki-roly",
+        "title": "Канмі манго",
+        "price": "170 грн",
+        "weight": "160 г",
+        "ingredients": "Рисовий папір, крем-сир, манго, топінг манго, шматочки манго",
+        "image": "images/SolodkiRoly/KanmiMango.jpg"
+      },
+      {
+        "id": "solodki-roly-2",
+        "category": "solodki-roly",
+        "title": "Канмі банана",
+        "price": "170 грн",
+        "weight": "160 г",
+        "ingredients": "Рисовий папір, крем-сир, банан, шоколадний топінг, шматочки банана",
+        "image": "images/SolodkiRoly/KanmiBanana.jpg"
+      },
+      {
+        "id": "solodki-roly-3",
+        "category": "solodki-roly",
+        "title": "Канмі цитрус",
+        "price": "170 грн",
+        "weight": "160 г",
+        "ingredients": "Рисовий папір, крем-сир, ківі, апельсин, вишневий топінг, шматочки ківі та апельсина",
+        "image": "images/SolodkiRoly/KanmiCitrus.jpg"
+      },
+      {
+        "id": "solodki-roly-4",
+        "category": "solodki-roly",
+        "title": "Сет Канмі",
+        "price": "500 грн",
+        "weight": "480 г",
+        "ingredients": "Канмі манго, Канмі банана, Канмі цитрус",
+        "image": "images/SolodkiRoly/SetKanmi.jpg"
+      },
+      {
+        "id": "frityur-1",
+        "category": "frityur",
+        "title": "Картопля фрі середня",
+        "price": "80 / 150грн",
+        "weight": "120 г",
+        "ingredients": "Картопля фрі середня - 80грн",
+        "image": "images/Frityur/KartoplyaFri.jpg"
+      },
+      {
+        "id": "frityur-2",
+        "category": "frityur",
+        "title": "Нагетси",
+        "price": "85 / 160 грн",
+        "weight": "6 / 12 шт",
+        "ingredients": "Куряче філе в паніровці",
+        "image": "images/Frityur/Nagetsi.jpg"
+      },
+      {
+        "id": "frityur-3",
+        "category": "frityur",
+        "title": "Цибулеві кільця",
+        "price": "85 грн",
+        "weight": "8 шт",
+        "ingredients": "Цибуля в паніровці",
+        "image": "images/Frityur/CibulevieKiltsya.jpg"
+      },
+      {
+        "id": "frityur-4",
+        "category": "frityur",
+        "title": "Соус",
+        "price": "20 грн",
+        "weight": "—",
+        "ingredients": "Майонезний, сирний, тартар, кетчуп, кисло-солодкий або унагі",
+        "image": ""
+      },
+      {
+        "id": "supy-1",
+        "category": "supy",
+        "title": "Місо суп з морепродуктами",
+        "price": "180 грн",
+        "weight": "—",
+        "ingredients": "Місо-суп з морепродуктами",
+        "image": "images/Supy/MisoSupZMoreproduktami.jpg"
+      },
+      {
+        "id": "salaty-1",
+        "category": "salaty",
+        "title": "Хіяші з горіховим соусом",
+        "price": "90 грн",
+        "weight": "75/25 г",
+        "ingredients": "Хіяші, горіховий соус",
+        "image": "images/Salaty/HiyashiZGorihovimSoysom.jpg"
+      },
+      {
+        "id": "napoi-1-1",
+        "category": "napoi",
+        "title": "Еспресо / Ристрето",
+        "price": "35 грн",
+        "weight": "—",
+        "ingredients": "Кава",
+        "image": ""
+      },
+      {
+        "id": "napoi-1-2",
+        "category": "napoi",
+        "title": "Еспресо макіато",
+        "price": "40 грн",
+        "weight": "—",
+        "ingredients": "Еспресо, молочна піна",
+        "image": ""
+      },
+      {
+        "id": "napoi-1-3",
+        "category": "napoi",
+        "title": "Еспресо лунго",
+        "price": "40 грн",
+        "weight": "—",
+        "ingredients": "Еспресо",
+        "image": ""
+      },
+      {
+        "id": "napoi-1-4",
+        "category": "napoi",
+        "title": "Допіо",
+        "price": "55 грн",
+        "weight": "—",
+        "ingredients": "Подвійний еспресо",
+        "image": ""
+      },
+      {
+        "id": "napoi-1-5",
+        "category": "napoi",
+        "title": "Американо",
+        "price": "45 грн",
+        "weight": "—",
+        "ingredients": "Еспресо, вода",
+        "image": ""
+      },
+      {
+        "id": "napoi-1-6",
+        "category": "napoi",
+        "title": "Американо з молоком",
+        "price": "50 грн",
+        "weight": "—",
+        "ingredients": "Еспресо, вода, молоко",
+        "image": ""
+      },
+      {
+        "id": "napoi-1-7",
+        "category": "napoi",
+        "title": "Латте",
+        "price": "55 грн",
+        "weight": "—",
+        "ingredients": "Еспр������со, молоко",
+        "image": ""
+      },
+      {
+        "id": "napoi-1-8",
+        "category": "napoi",
+        "title": "Капучино",
+        "price": "55 грн",
+        "weight": "—",
+        "ingredients": "Еспресо, молоко",
+        "image": ""
+      },
+      {
+        "id": "napoi-1-9",
+        "category": "napoi",
+        "title": "Флет-вайт",
+        "price": "60 грн",
+        "weight": "—",
+        "ingredients": "Подвійний еспресо, молоко",
+        "image": ""
+      },
+      {
+        "id": "napoi-1-10",
+        "category": "napoi",
+        "title": "Шоколад",
+        "price": "60 грн",
+        "weight": "—",
+        "ingredients": "Шоколад, молоко",
+        "image": ""
+      },
+      {
+        "id": "napoi-2-1",
+        "category": "napoi",
+        "title": "Еспресо Тонік",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "Еспресо, тонік",
+        "image": ""
+      },
+      {
+        "id": "napoi-2-2",
+        "category": "napoi",
+        "title": "Кофі Чері/Оранж",
+        "price": "90 грн",
+        "weight": "—",
+        "ingredients": "Кава, вишня / апельсин",
+        "image": ""
+      },
+      {
+        "id": "napoi-2-3",
+        "category": "napoi",
+        "title": "Айс Лате",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "Еспресо, молоко, лід",
+        "image": ""
+      },
+      {
+        "id": "napoi-3-1",
+        "category": "napoi",
+        "title": "Бабл Кохве",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-3-2",
+        "category": "napoi",
+        "title": "Бабл Теа",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-4-1",
+        "category": "napoi",
+        "title": "Чайник чаю",
+        "price": "110 грн",
+        "weight": "—",
+        "ingredients": "Зелений «Саусеп», зелений «Жасмин», трав'яний «Альпійський луг», чорний «Англійський сніданок», чорний Earl Grey",
+        "image": ""
+      },
+      {
+        "id": "napoi-4-2",
+        "category": "napoi",
+        "title": "Чашка чаю",
+        "price": "60 грн",
+        "weight": "—",
+        "ingredients": "Зелений «Саусеп», зелений «Жасмин», трав'яний «Альпійський луг», чорний «Англійський сніданок», чорний Earl Grey",
+        "image": ""
+      },
+      {
+        "id": "napoi-4-3",
+        "category": "napoi",
+        "title": "Фірмовий чай",
+        "price": "60 грн",
+        "weight": "—",
+        "ingredients": "Малина, обліпиха, імбир, смородина, глінтвейн вишневий",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-1",
+        "category": "napoi",
+        "title": "Мохіто класичне",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-2",
+        "category": "napoi",
+        "title": "Мохіто полуниця",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-3",
+        "category": "napoi",
+        "title": "Мохіто цитрус",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-4",
+        "category": "napoi",
+        "title": "Мохіто ківі",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-5",
+        "category": "napoi",
+        "title": "Лимонад полуничний",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-6",
+        "category": "napoi",
+        "title": "Лимонад Маракуя Диня",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-7",
+        "category": "napoi",
+        "title": "Лимонад Цитрус",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-8",
+        "category": "napoi",
+        "title": "Лимонад Ананас",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-9",
+        "category": "napoi",
+        "title": "Лимонад Ківі",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-5-10",
+        "category": "napoi",
+        "title": "Коктейль «Блакитний чил»",
+        "price": "85 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-1",
+        "category": "napoi",
+        "title": "Пепсі 1,25 л",
+        "price": "75 грн",
+        "weight": "1,25 л",
+        "ingredients": "Pepsi",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-2",
+        "category": "napoi",
+        "title": "7UP 1,25 л",
+        "price": "75 грн",
+        "weight": "1,25 л",
+        "ingredients": "7UP",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-3",
+        "category": "napoi",
+        "title": "Schweppes 1 л",
+        "price": "80 грн",
+        "weight": "1 л",
+        "ingredients": "Schweppes",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-4",
+        "category": "napoi",
+        "title": "Пепсі 0,5 л",
+        "price": "45 грн",
+        "weight": "0,5 л",
+        "ingredients": "Pepsi",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-5",
+        "category": "napoi",
+        "title": "Mirinda / 7UP 0,5 л",
+        "price": "45 грн",
+        "weight": "0,5 л",
+        "ingredients": "Mirinda або 7UP",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-6",
+        "category": "napoi",
+        "title": "Пепсі з/б",
+        "price": "40 грн",
+        "weight": "—",
+        "ingredients": "Pepsi",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-7",
+        "category": "napoi",
+        "title": "Моно жуйчик з/б",
+        "price": "40 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-8",
+        "category": "napoi",
+        "title": "Вода",
+        "price": "40 грн",
+        "weight": "0,5 л",
+        "ingredients": "Карпатська джерельна, газована / негазована",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-9",
+        "category": "napoi",
+        "title": "Сандора",
+        "price": "140 грн",
+        "weight": "0,95 л",
+        "ingredients": "Яблучний, гранатовий, томатний з сіллю, виноградний, вишневий, мультивітамінний нектар, апельсиновий",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-10",
+        "category": "napoi",
+        "title": "Сандора",
+        "price": "85 грн",
+        "weight": "0,5 л",
+        "ingredients": "Мультивітамінний нектар, вишневий нектар, бананово-яблучно-полуничний нектар",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-11",
+        "category": "napoi",
+        "title": "Садочок",
+        "price": "80 грн",
+        "weight": "0,5 л",
+        "ingredients": "Мультифрукт, яблуко-виноград, мультивітамін",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-12",
+        "category": "napoi",
+        "title": "Пепсі з льодом",
+        "price": "55 грн",
+        "weight": "—",
+        "ingredients": "Pepsi, лід",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-13",
+        "category": "napoi",
+        "title": "Сік з льодом",
+        "price": "65 грн",
+        "weight": "—",
+        "ingredients": "Сік, лід",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-14",
+        "category": "napoi",
+        "title": "Молочний коктейль",
+        "price": "110 грн",
+        "weight": "—",
+        "ingredients": "—",
+        "image": ""
+      },
+      {
+        "id": "napoi-6-15",
+        "category": "napoi",
+        "title": "Ванільний або банановий",
+        "price": "110 грн",
+        "weight": "—",
+        "ingredients": "Ванільний або банановий смак",
+        "image": ""
+      }
+    ]
+  },
+  "delivery": {
+    "text": "Доставка по району, швидко, свіжо й зручно — замовляйте в будь-який час дня.",
+    "rates": [
+      {
+        "location": "Самовивіз",
+        "conditions": "Димер, Яблунева 3А"
+      },
+      {
+        "location": "Димер",
+        "conditions": "До 500 грн — 80 грн; від 500 грн — 30 грн"
+      },
+      {
+        "location": "Глібівка",
+        "conditions": "До 1500 грн — 100 грн; від 1500 грн — 50 грн"
+      },
+      {
+        "location": "Ясногородка",
+        "conditions": "Від 500 грн — 250 грн; від 1500 грн — 200 грн; від 2200 грн — 100 грн"
+      },
+      {
+        "location": "Толокунь",
+        "conditions": "Від 900 грн — 250 грн; від 1800 грн — 200 грн; від 2200 грн — 150 грн"
+      },
+      {
+        "location": "Сухолуччя",
+        "conditions": "Від 1000 грн — 250 грн; від 2000 грн — 200 грн; від 2500 грн — 150 грн"
+      },
+      {
+        "location": "Козаровичі",
+        "conditions": "До 1000 грн — 150 грн; від 1000 грн — 100 грн"
+      },
+      {
+        "location": "Демидів",
+        "conditions": "Від 500 грн — 150 грн; від 1500 грн — 100 грн"
+      },
+      {
+        "location": "Синяк",
+        "conditions": "Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн"
+      },
+      {
+        "location": "Катюжанка",
+        "conditions": "Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн"
+      },
+      {
+        "location": "Гута Катюжанська",
+        "conditions": "Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн"
+      },
+      {
+        "location": "Феневичі",
+        "conditions": "Від 1000 грн — 250 грн; від 2000 грн — 200 грн; від 2500 грн — 150 грн"
+      },
+      {
+        "location": "Абрамівка",
+        "conditions": "Від 1000 грн — 250 грн; від 2000 грн — 200 грн; від 2500 грн — 150 грн"
+      },
+      {
+        "location": "Дудки",
+        "conditions": "Від 900 грн — 250 грн; від 1800 грн — 200 грн; від 2200 грн — 150 грн"
+      },
+      {
+        "location": "Рикунь",
+        "conditions": "До 1500 грн — 100 грн; від 1500 грн — 50 грн"
+      },
+      {
+        "location": "Литвинівка",
+        "conditions": "Від 500 грн — 250 грн; від 1500 грн — 200 грн; від 2200 грн — 100 грн"
+      },
+      {
+        "location": "Миколаївка",
+        "conditions": "Від 500 грн — 250 грн; від 1500 грн — 200 грн; від 2200 грн — 100 грн"
+      },
+      {
+        "location": "Лісовичі",
+        "conditions": "Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн"
+      },
+      {
+        "location": "Тарасівщина",
+        "conditions": "Від 500 грн — 250 грн; від 1500 грн — 200 грн; від 2200 грн — 100 грн"
+      },
+      {
+        "location": "Кам'янка",
+        "conditions": "До 1500 грн — 100 грн; від 1500 грн — 50 грн"
+      },
+      {
+        "location": "Луб'янка",
+        "conditions": "Від 900 грн — 250 грн; від 1800 грн — 200 грн; від 2200 грн — 150 грн"
+      },
+      {
+        "location": "Лютіж",
+        "conditions": "Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн"
+      },
+      {
+        "location": "Федорівка",
+        "conditions": "Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 100 грн"
+      },
+      {
+        "location": "Рови",
+        "conditions": "Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн"
+      },
+      {
+        "location": "Любимівка",
+        "conditions": "Від 900 грн — 250 грн; від 1800 грн — 200 грн; від 2200 грн — 150 грн"
+      }
+    ]
+  },
+  "meta": {
+    "catalogImported": true,
+    "deliveryRatesImported": true
+  }
+}
