@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка | Sushi Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <script>
+        if (sessionStorage.getItem('sushiSiteUnlocked') !== 'true') {
+            window.location.href = 'access.html';
+        }
+    </script>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Sushi Home">
+            </a>
+
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="order.html">Замовити</a></li>
+                    </ul>
+                </nav>
+
+                <div class="search">
+                    <button type="button" aria-label="Пошук">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <button class="burger-btn" type="button" aria-label="Відкрити меню">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" aria-hidden="true">
+            <div class="mobile-menu-inner">
+                <button class="mobile-menu-close" type="button" aria-label="Закрити меню">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="order.html">Замовити</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-search">
+                    <input type="search" placeholder="Пошук...">
+                    <button type="button" aria-label="Пошук"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 id="delivery-page-title">SUSHI HOME В ДИМЕРІ</h2>
+
+                <div id="delivery-page-text">
+                <p>
+                    Наша місія – робити смачне доступним. Наша кухня працює за адресою
+                    <span data-store-address>смт Димер, вул. Яблунева, 3А</span>, тому нас максимально легко знайти.
+                </p>
+
+                <p>
+                    У нас можна скуштувати улюблені роли прямо в закладі,
+                    оформити самовивіз або замовити доставку.
+                </p>
+
+                <p>
+                    Смачно. Якісно. Поруч.
+                </p>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <iframe id="store-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638.8502324394291!2d30.310672769665718!3d50.78381929822864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472ad9a86b54b46d%3A0x94145c19cb85ee3f!2sSushi%20Home!5e1!3m2!1suk!2sua!4v1785797086008!5m2!1suk!2sua" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="delivery-pricing">
+        <div class="container">
+            <h2>🚚 Доставка</h2>
+            <div class="delivery-table-wrap">
+                <table class="delivery-table">
+                    <thead>
+                        <tr>
+                            <th>Населений пункт</th>
+                            <th>Умови доставки</th>
+                        </tr>
+                    </thead>
+                    <tbody id="delivery-rates-body">
+                        <tr><td>Самовивіз</td><td>Димер, Яблунева 3А</td></tr>
+                        <tr><td>Димер</td><td>До 500 грн — 80 грн; від 500 грн — 30 грн</td></tr>
+                        <tr><td>Глібівка</td><td>До 1500 грн — 100 грн; від 1500 грн — 50 грн</td></tr>
+                        <tr><td>Ясногородка</td><td>Від 500 грн — 250 грн; від 1500 грн — 200 грн; від 2200 грн — 100 грн</td></tr>
+                        <tr><td>Толокунь</td><td>Від 900 грн — 250 грн; від 1800 грн — 200 грн; від 2200 грн — 150 грн</td></tr>
+                        <tr><td>Сухолуччя</td><td>Від 1000 грн — 250 грн; від 2000 грн — 200 грн; від 2500 грн — 150 грн</td></tr>
+                        <tr><td>Козаровичі</td><td>До 1000 грн — 150 грн; від 1000 грн — 100 грн</td></tr>
+                        <tr><td>Демидів</td><td>Від 500 грн — 150 грн; від 1500 грн — 100 грн</td></tr>
+                        <tr><td>Синяк</td><td>Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн</td></tr>
+                        <tr><td>Катюжанка</td><td>Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн</td></tr>
+                        <tr><td>Гута Катюжанська</td><td>Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн</td></tr>
+                        <tr><td>Феневичі</td><td>Від 1000 грн — 250 грн; від 2000 грн — 200 грн; від 2500 грн — 150 грн</td></tr>
+                        <tr><td>Абрамівка</td><td>Від 1000 грн — 250 грн; від 2000 грн — 200 грн; від 2500 грн — 150 грн</td></tr>
+                        <tr><td>Дудки</td><td>Від 900 грн — 250 грн; від 1800 грн — 200 грн; від 2200 грн — 150 грн</td></tr>
+                        <tr><td>Рикунь</td><td>До 1500 грн — 100 грн; від 1500 грн — 50 грн</td></tr>
+                        <tr><td>Литвинівка</td><td>Від 500 грн — 250 грн; від 1500 грн — 200 грн; від 2200 грн — 100 грн</td></tr>
+                        <tr><td>Миколаївка</td><td>Від 500 грн — 250 грн; від 1500 грн — 200 грн; від 2200 грн — 100 грн</td></tr>
+                        <tr><td>Лісовичі</td><td>Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн</td></tr>
+                        <tr><td>Тарасівщина</td><td>Від 500 грн — 250 грн; від 1500 грн — 200 грн; від 2200 грн — 100 грн</td></tr>
+                        <tr><td>Кам'янка</td><td>До 1500 грн — 100 грн; від 1500 грн — 50 грн</td></tr>
+                        <tr><td>Луб'янка</td><td>Від 900 грн — 250 грн; від 1800 грн — 200 грн; від 2200 грн — 150 грн</td></tr>
+                        <tr><td>Лютіж</td><td>Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн</td></tr>
+                        <tr><td>Федорівка</td><td>Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 100 грн</td></tr>
+                        <tr><td>Рови</td><td>Від 500 грн — 250 грн; від 1700 грн — 200 грн; від 2200 грн — 130 грн</td></tr>
+                        <tr><td>Любимівка</td><td>Від 900 грн — 250 грн; від 1800 грн — 200 грн; від 2200 грн — 150 грн</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <img src="images/logo.svg" alt="Sushi Home" class="footer-logo">
+                    <p>
+                        Sushi Home — доставка свіжих суші,
+                        ролів, сетів та гарячих страв.
+                        Працюємо щодня для вас ❤️
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Навігація</h3>
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="order.html">Замовити</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Контакти</h3>
+                    <p><i class="fa-solid fa-phone"></i> <span data-store-phone>+38 (096) 801-10-02</span></p>
+                    <p><i class="fa-solid fa-location-dot"></i> <span data-store-address>смт Димер, вул. Яблунева, 3А</span></p>
+                    <p><i class="fa-solid fa-clock"></i> <span data-store-hours>Щодня 10:00 – 22:00</span></p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Ми у соцмережах</h3>
+                        <div class="social-icons" data-store-social>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© PLCDO 2026. Усі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/delivery.js"></script>
+    <script src="js/page-content.js"></script>
+</body>
+
+</html>

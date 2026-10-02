@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вхід до Sushi Home</title>
+  <style>
+    :root {
+      --bg: #171717;
+      --card: #fff;
+      --red: #c62026;
+      --text: #1a1a1a;
+      --muted: #666;
+      --line: #efefef;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #1b1b1b, #2f2f2f);
+      color: var(--text);
+    }
+
+    .panel {
+      width: min(420px, calc(100vw - 32px));
+      background: var(--card);
+      border-radius: 28px;
+      padding: 28px 22px;
+      box-shadow: 0 24px 60px rgba(0,0,0,.28);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      color: var(--muted);
+      margin: 0 0 20px;
+    }
+
+    form {
+      display: grid;
+      gap: 12px;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      padding: 14px 16px;
+      font: inherit;
+    }
+
+    button {
+      border: none;
+      border-radius: 12px;
+      padding: 14px 18px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .error {
+      min-height: 20px;
+      color: var(--red);
+      font-weight: 700;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Sushi Home</h1>
+    <p>Введіть ключ доступу до магазину</p>
+    <form id="access-form">
+      <input id="access-key" type="password" placeholder="Ключ доступу" autocomplete="off" />
+      <button type="submit">Увійти</button>
+    </form>
+    <div id="access-error" class="error" aria-live="polite"></div>
+  </div>
+
+  <script>
+    const ACCESS_KEY = 'sushi-home-2026';
+    const form = document.getElementById('access-form');
+    const input = document.getElementById('access-key');
+    const error = document.getElementById('access-error');
+
+    const isUnlocked = () => sessionStorage.getItem('sushiSiteUnlocked') === 'true';
+
+    if (isUnlocked()) {
+      window.location.href = 'index.html';
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const value = input.value.trim();
+
+      if (value !== ACCESS_KEY) {
+        error.textContent = 'Невірний ключ доступу';
+        return;
+      }
+
+      sessionStorage.setItem('sushiSiteUnlocked', 'true');
+      window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

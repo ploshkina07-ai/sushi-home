@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sushi Home</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <script>
+        if (sessionStorage.getItem('sushiSiteUnlocked') !== 'true') {
+            window.location.href = 'access.html';
+        }
+    </script>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="container">
+
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Sushi Home">
+            </a>
+
+            <div class="header-right">
+
+                <nav>
+
+                    <ul>
+
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="order.html">Замовити</a></li>
+
+                    </ul>
+
+                </nav>
+
+                <div class="search">
+                    <button type="button" aria-label="Пошук">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <button class="burger-btn" type="button" aria-label="Відкрити меню">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="mobile-menu" aria-hidden="true">
+            <div class="mobile-menu-inner">
+                <button class="mobile-menu-close" type="button" aria-label="Закрити меню">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="order.html">Замовити</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-search">
+                    <input type="search" placeholder="Пошук...">
+                    <button type="button" aria-label="Пошук"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= SLIDER ================= -->
+
+    <section class="slider">
+
+        <div class="container">
+
+            <div class="slider-wrapper">
+
+                <div class="slider-track">
+
+                    <img class="slider-slide active" src="images/banner.png" alt="Banner slide 1">
+
+                    <img class="slider-slide" src="images/banner2.png" alt="Banner slide 2">
+
+                    <img class="slider-slide" src="images/banner3.png" alt="Banner slide 3">
+
+                    <img class="slider-slide" src="images/banner4.png" alt="Banner slide 4">
+
+                </div>
+
+            </div>
+
+            <div class="slider-dots">
+
+                <button class="active" type="button" aria-label="Слайд 1" data-slide="0"></button>
+
+                <button type="button" aria-label="Слайд 2" data-slide="1"></button>
+
+                <button type="button" aria-label="Слайд 3" data-slide="2"></button>
+
+                <button type="button" aria-label="Слайд 4" data-slide="3"></button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= NEW PRODUCTS ================= -->
+
+    <section class="products">
+
+        <div class="container">
+
+            <h2>НОВИНКИ</h2>
+
+            <div class="product-grid">
+
+                <article class="product-card" data-weight="295 г" data-ingredients="Норі, рис, крем-сир Філадельфія, креветка, манго, лосось, соус унагі, кунжут">
+                    <div class="product-image"><img src="images/New/Sakura.jpg" alt="Сакура"></div>
+                    <div class="product-info">
+                        <h3>Рол "Сакура" з креветками та манго</h3>
+                        <div class="price-row">
+                            <span>ЦІНА: 250</span>
+                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-weight="205 г" data-ingredients="Норі, рис, крем-сир Філадельфія, креветка, огірок, кунжут">
+                    <div class="product-image"><img src="images/New/Sun.jpg" alt="Філадельфія"></div>
+                    <div class="product-info">
+                        <h3>Рол Сонячний з креветкою та огірком</h3>
+                        <div class="price-row">
+                            <span>ЦІНА: 250</span>
+                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-weight="210 г" data-ingredients="Норі, рис, огірок, крабовий заміс, соус унагі, мідії">
+                    <div class="product-image"><img src="images/New/HotCrub.jpg" alt="Чедер"></div>
+                    <div class="product-info">
+                        <h3>Хоткраб з мідіями та огірком</h3>
+                        <div class="price-row">
+                            <span>ЦІНА: 250</span>
+                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-weight="125 г" data-ingredients="Норі, крем-сир Філадельфія, авокадо, тунець, ікра масаго, соус унагі">
+                    <div class="product-image"><img src="images/New/Tuna.jpg" alt="Юма"></div>
+                    <div class="product-info">
+                        <h3>Нацу з тунцем та авокадо</h3>
+                        <div class="price-row">
+                            <span>ЦІНА: 250</span>
+                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-weight="125 г" data-ingredients="Норі, крем-сир Філадельфія, авокадо, вугор, ікра масаго, соус унагі">
+                    <div class="product-image"><img src="images/New/Vugor.jpg" alt="Сакура"></div>
+                    <div class="product-info">
+                        <h3>Нацу з вугрем та авокадо</h3>
+                        <div class="price-row">
+                            <span>ЦІНА: 250</span>
+                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-weight="125 г" data-ingredients="Норі, крем-сир Філадельфія, манго, креветка, ікра масаго, соус унагі">
+                    <div class="product-image"><img src="images/New/Krevetka.jpg" alt="Філадельфія"></div>
+                    <div class="product-info">
+                        <h3>Нацу з креветкою та манго</h3>
+                        <div class="price-row">
+                            <span>ЦІНА: 250</span>
+                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-weight="125 г" data-ingredients="Норі, крем-сир Філадельфія, манго, лосось, ікра масаго, соус унагі">
+                    <div class="product-image"><img src="images/New/Salmon.jpg" alt="Чедер"></div>
+                    <div class="product-info">
+                        <h3>Нацу з лососем та манго</h3>
+                        <div class="price-row">
+                            <span>ЦІНА: 250</span>
+                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="product-card" data-weight="625 г" data-ingredients="Нацу з тунцем, Нацу з вугрем, Нацу з креветкою, Нацу з мідією, Нацу з лососем">
+                    <div class="product-image"><img src="images/New/SetNatsu.jpg" alt="Юма"></div>
+                    <div class="product-info">
+                        <h3>Сет "Нацу дей"</h3>
+                        <div class="price-row">
+                            <span>ЦІНА: 250</span>
+                            <button type="button"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+               
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 id="index-about-title">Про Sushi Home</h2>
+                <div id="index-about-text">
+                <p>
+                    Sushi Home — це не просто доставка ролів, а повноцінний сервіс для тих,
+                    хто любить свіжі інгредієнти, смачно приготовані страви та зручне замовлення.
+                    Ми готуємо кожен рол у власній кухні, ретельно підібрали склад і робимо все,
+                    щоб смаки залишалися яскравими, а доставка була максимально швидкою.
+                </p>
+                <p>
+                    Ми працюємо щодня, щоб ви могли замовити улюблені сети, гарячі страви,
+                    напої та фірмові роли без зайвих складнощів. Для нас важливі якість,
+                    швидкість і уважне ставлення до кожного клієнта.
+                </p>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <iframe id="store-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d638.8502324394291!2d30.310672769665718!3d50.78381929822864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472ad9a86b54b46d%3A0x94145c19cb85ee3f!2sSushi%20Home!5e1!3m2!1suk!2sua!4v1785797086008!5m2!1suk!2sua" width="100%" height="360" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="delivery">
+        <div class="container">
+            <h2 class="section-title">Доставка</h2>
+            <div class="delivery-wrapper">
+                <article class="delivery-card">
+                    <div class="delivery-icon"><i class="fa-solid fa-motorcycle"></i></div>
+                    <h3>Швидка доставка</h3>
+                    <p>Замовлення доставляємо оперативно по району та найближчих селищах.</p>
+                </article>
+
+                <article class="delivery-card">
+                    <div class="delivery-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <h3>Самовивіз</h3>
+                    <p>Можна забрати замовлення самостійно за адресою: <span data-store-address>смт Димер, вул. Яблунева, 3А</span>.</p>
+                </article>
+
+                <article class="delivery-card">
+                    <div class="delivery-icon"><i class="fa-solid fa-wallet"></i></div>
+                    <h3>Зручна оплата</h3>
+                    <p>Оплата готівкою або карткою після отримання замовлення.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-column">
+
+                    <img src="images/logo.svg"
+                         alt="Sushi Home"
+                         class="footer-logo">
+
+                    <p>
+
+                        Sushi Home — доставка свіжих суші,
+                        ролів, сетів та гарячих страв.
+
+                        Працюємо щодня для вас ❤️
+
+                    </p>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h3>Навігація</h3>
+
+                    <ul>
+
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="order.html">Замовити</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h3>Контакти</h3>
+
+
+                    <p><i class="fa-solid fa-phone"></i> <span data-store-phone>+38 (096) 801-10-02</span></p>
+
+                    <p><i class="fa-solid fa-location-dot"></i> <span data-store-address>смт Димер, вул. Яблунева, 3А</span>.</p>
+
+                    <p><i class="fa-solid fa-clock"></i> <span data-store-hours>Щодня 10:00 – 22:00</span></p>
+
+                    <div class="footer-social">
+                        <span data-store-social></span>
+                    </div>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h3>Ми у соцмережах</h3>
+
+                    <div class="social-icons">
+
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>© PLCDO 2026. Усі права захищені.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <div class="product-modal" aria-hidden="true">
+        <div class="product-modal__backdrop" data-modal-close></div>
+        <div class="product-modal__sheet" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+            <button class="product-modal__close" type="button" data-modal-close aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img class="product-modal__image" src="" alt="">
+            <div class="product-modal__content">
+                <div class="product-modal__header">
+                    <h3 id="product-modal-title" class="product-modal__title"></h3>
+                    <button class="product-modal__cart" type="button" aria-label="Додати в кошик">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </button>
+                </div>
+                <div class="product-modal__price"></div>
+                <p class="product-modal__weight"></p>
+                <p class="product-modal__description"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/page-content.js"></script>
+
+</body>
+
+</html>

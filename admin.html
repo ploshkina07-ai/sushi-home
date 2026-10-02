@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адмін: Sushi Home</title>
+    <style>
+        :root {
+            --bg: #f7f7f7;
+            --card: #ffffff;
+            --text: #1f1f1f;
+            --muted: #666;
+            --red: #c62026;
+            --line: #ececec;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        body.locked {
+            overflow: hidden;
+        }
+
+        #admin-lock {
+            position: fixed;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            background: rgba(18, 18, 18, 0.72);
+            z-index: 10;
+        }
+
+        .lock-box {
+            width: min(420px, calc(100vw - 32px));
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 28px 22px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.18);
+        }
+
+        .lock-box h2 {
+            margin: 0 0 8px;
+            font-size: 1.8rem;
+        }
+
+        .lock-box p {
+            margin: 0 0 18px;
+            color: var(--muted);
+        }
+
+        #admin-key-input {
+            margin-bottom: 12px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 32px 20px 80px;
+        }
+
+        h1 {
+            margin: 0 0 24px;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+        }
+
+        .new-order-alert {
+            display: none;
+            margin: -8px 0 20px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            background: #fff0f0;
+            border: 1px solid var(--red);
+            color: #9d151a;
+            font-weight: 800;
+        }
+
+        .new-order-alert.visible {
+            display: block;
+            animation: order-alert-pulse 1s ease-in-out 3;
+        }
+
+        @keyframes order-alert-pulse {
+            50% { transform: scale(1.01); background: #ffd8d8; }
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .tab-btn {
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--text);
+            border-radius: 12px;
+            padding: 10px 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .tab-btn.active {
+            background: var(--red);
+            color: #fff;
+            border-color: var(--red);
+        }
+
+        .panel {
+            display: none;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 24px;
+            box-shadow: 0 10px 24px rgba(0,0,0,.03);
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section h2 {
+            font-size: 1.3rem;
+            margin: 0 0 18px;
+        }
+
+        .row {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .field {
+            display: grid;
+            gap: 8px;
+        }
+
+        .field label {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            border: 1px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 12px 14px;
+            font: inherit;
+            background: #fff;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 18px;
+            background: var(--red);
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn.secondary {
+            background: #111;
+        }
+
+        .list {
+            display: grid;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 14px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #fafafa;
+        }
+
+        .list-item small {
+            color: var(--muted);
+        }
+
+        .remove-btn,
+        .edit-btn,
+        .move-btn {
+            border: none;
+            background: transparent;
+            font-weight: 800;
+            cursor: pointer;
+        }
+
+        .remove-btn {
+            color: var(--red);
+        }
+
+        .edit-btn {
+            color: #0d5d9f;
+        }
+
+        .move-btn {
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .action-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .msg {
+            margin-top: 16px;
+            min-height: 20px;
+            font-weight: 700;
+            color: var(--red);
+        }
+
+        .msg.success {
+            color: #1d8f5a;
+        }
+
+        .orders {
+            display: grid;
+            gap: 18px;
+        }
+
+        .order-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 12px 24px rgba(0,0,0,.03);
+        }
+
+        .order-card.new-order {
+            background: #fff0f0;
+            border: 2px solid var(--red);
+            box-shadow: 0 12px 28px rgba(198, 32, 38, .22);
+            animation: new-order-card-pulse 1s ease-in-out 8;
+        }
+
+        .accept-order-btn {
+            margin-top: 8px;
+            background: #1d8f5a;
+        }
+
+        .order-accepted {
+            margin: 8px 0 0;
+            color: #1d8f5a;
+            font-weight: 800;
+        }
+
+        @keyframes new-order-card-pulse {
+            50% { background: #ffd8d8; transform: scale(1.01); }
+        }
+
+        .order-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .order-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .order-time {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .order-details {
+            display: grid;
+            gap: 8px;
+            color: var(--text);
+        }
+
+        .order-items {
+            padding-left: 18px;
+            margin: 8px 0 10px;
+            line-height: 1.7;
+        }
+
+        .order-total {
+            margin: 0;
+            color: var(--red);
+            font-weight: 800;
+        }
+
+        .empty {
+            background: var(--card);
+            border: 1px dashed var(--line);
+            border-radius: 16px;
+            padding: 20px;
+            color: var(--muted);
+        }
+
+        .image-upload-zone {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 10px 12px;
+            border: 1px dashed #d8d8d8;
+            border-radius: 12px;
+            background: #fafafa;
+            min-height: 54px;
+            transition: all 0.2s ease;
+        }
+
+        .image-upload-zone.dragging {
+            border-color: var(--red);
+            background: #fff1f1;
+        }
+
+        .upload-label {
+            font-size: 0.85rem;
+            color: var(--muted);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .upload-trigger {
+            min-width: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div id="admin-lock" style="display: none;">
+        <div class="lock-box">
+            <h2>Вхід в адмін-панель</h2>
+            <p>Введіть ключ доступу</p>
+            <form id="admin-login-form">
+                <input id="admin-key-input" type="password" placeholder="Ключ доступу" autocomplete="off" />
+                <button type="submit" class="btn">Увійти</button>
+            </form>
+            <div id="admin-login-error" class="msg"></div>
+        </div>
+    </div>
+
+    <div class="container" id="admin-panel" style="display: none;">
+        <h1>Адмін-панель Sushi Home</h1>
+        <div class="new-order-alert" id="new-order-alert" role="status" aria-live="assertive"></div>
+
+        <div class="tabs">
+            <button type="button" class="tab-btn active" data-tab="orders">Замовлення</button>
+            <button type="button" class="tab-btn" data-tab="index">Index</button>
+            <button type="button" class="tab-btn" data-tab="menu">Menu</button>
+            <button type="button" class="tab-btn" data-tab="delivery">Delivery</button>
+            <button type="button" class="tab-btn" data-tab="footer">Футер</button>
+            
+        </div>
+
+        <div class="panel active" id="panel-orders">
+            <div class="header-row">
+                <h2>Замовлення</h2>
+                <button class="btn secondary" type="button" id="refresh-btn">Оновити</button>
+            </div>
+            <div class="orders" id="orders"></div>
+        </div>
+
+        <div class="panel" id="panel-index">
+            <div class="section">
+                <h2>Тексти головної сторінки</h2>
+                <div class="row">
+                    <div class="field">
+                        <label>Заголовок блоку «Про нас»</label>
+                        <input type="text" id="index-about-title">
+                    </div>
+                    <div class="field">
+                        <label>Текст «Про нас»</label>
+                        <textarea id="index-about-text" placeholder="Кожен абзац відділяйте порожнім рядком"></textarea>
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="btn" type="button" id="save-index-content">Зберегти тексти головної</button>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Банери</h2>
+                <div class="row">
+                    <div class="field">
+                        <label>Заголовок</label>
+                        <input type="text" id="banner-title">
+                    </div>
+                    <div class="field">
+                        <label>Підзаголовок</label>
+                        <input type="text" id="banner-subtitle">
+                    </div>
+                </div>
+                <div class="section">
+                    <h2>Зображення банерів за розміром екрана</h2>
+                    <p>Додайте окремий файл для широкого екрана та для мобільних пристроїв. Мобільне зображення показується при ширині екрана до 768 px.</p>
+                    <div class="row">
+                    <div class="field">
+                        <label>Зображення для десктопа</label>
+                        <input type="text" id="banner-image" placeholder="images/slider-1.jpg">
+                        <div class="image-upload-zone" data-target="banner-image">
+                            <span class="upload-label">Перетягніть або виберіть фото</span>
+                            <input type="file" accept="image/*" class="image-file-input" data-target="banner-image" hidden>
+                            <button type="button" class="btn secondary upload-trigger" data-target="banner-image">Вибрати</button>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Зображення для мобільного (до 768 px)</label>
+                        <input type="text" id="banner-mobile-image" placeholder="images/slider-1_mob.jpg">
+                        <div class="image-upload-zone" data-target="banner-mobile-image">
+                            <span class="upload-label">Перетягніть або виберіть фото</span>
+                            <input type="file" accept="image/*" class="image-file-input" data-target="banner-mobile-image" hidden>
+                            <button type="button" class="btn secondary upload-trigger" data-target="banner-mobile-image">Вибрати</button>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="button-row">
+                        <button class="btn" type="button" id="add-banner">Додати банер</button>
+                        <button class="btn secondary" type="button" id="cancel-banner-edit" hidden>Скасувати редагування</button>
+                    </div>
+                    <div class="list" id="banner-list"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Новинки</h2>
+                <div class="row">
+                    <div class="field">
+                        <label>Назва</label>
+                        <input type="text" id="new-title">
+                    </div>
+                    <div class="field">
+                        <label>Ціна</label>
+                        <input type="text" id="new-price" placeholder="250 грн">
+                    </div>
+                    <div class="field">
+                        <label>Вага</label>
+                        <input type="text" id="new-weight" placeholder="210 г">
+                    </div>
+                    <div class="field">
+                        <label>Склад</label>
+                        <input type="text" id="new-ingredients" placeholder="Лосось, рис, авокадо">
+                    </div>
+                    <div class="field">
+                        <label>Зображення</label>
+                        <input type="text" id="new-image" placeholder="images/New/HotCrub.jpg">
+                        <div class="image-upload-zone" data-target="new-image">
+                            <span class="upload-label">Перетягніть або виберіть фото</span>
+                            <input type="file" accept="image/*" class="image-file-input" data-target="new-image" hidden>
+                            <button type="button" class="btn secondary upload-trigger" data-target="new-image">Вибрати</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="btn" type="button" id="add-new-product">Додати новинку</button>
+                </div>
+                <div class="list" id="new-products-list"></div>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-menu">
+            <div class="section">
+                <h2>Категорії</h2>
+                <div class="row">
+                    <div class="field">
+                        <label>ID</label>
+                        <input type="text" id="category-id" placeholder="sushi">
+                    </div>
+                    <div class="field">
+                        <label>Назва</label>
+                        <input type="text" id="category-name" placeholder="СУШІ">
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="btn" type="button" id="add-category">Додати категорію</button>
+                </div>
+                <div class="list" id="category-list"></div>
+            </div>
+
+            <div class="section">
+                <h2>Товари</h2>
+                <div class="row">
+                    <div class="field">
+                        <label>Назва</label>
+                        <input type="text" id="product-title">
+                    </div>
+                    <div class="field">
+                        <label>Категорія</label>
+                        <select id="product-category"></select>
+                    </div>
+                    <div class="field">
+                        <label>Ціна</label>
+                        <input type="text" id="product-price" placeholder="420 грн">
+                    </div>
+                    <div class="field">
+                        <label>Вага</label>
+                        <input type="text" id="product-weight" placeholder="440 г">
+                    </div>
+                    <div class="field">
+                        <label>Склад</label>
+                        <input type="text" id="product-ingredients" placeholder="Лосось, рис, авокадо">
+                    </div>
+                    <div class="field">
+                        <label>Зображення</label>
+                        <input type="text" id="product-image" placeholder="images/Filadelfiya/filadelfiya-1.jpg">
+                        <div class="image-upload-zone" data-target="product-image">
+                            <span class="upload-label">Перетягніть або виберіть фото</span>
+                            <input type="file" accept="image/*" class="image-file-input" data-target="product-image" hidden>
+                            <button type="button" class="btn secondary upload-trigger" data-target="product-image">Вибрати</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="btn" type="button" id="add-product">Додати товар</button>
+                </div>
+                <div class="list" id="product-list"></div>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-delivery">
+            <div class="section">
+                <h2>Текст сторінки доставки</h2>
+                <div class="row">
+                    <div class="field">
+                        <label>Заголовок</label>
+                        <input type="text" id="delivery-page-title">
+                    </div>
+                    <div class="field">
+                        <label>Текст</label>
+                        <textarea id="delivery-page-text" placeholder="Кожен абзац відділяйте порожнім рядком"></textarea>
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="btn" type="button" id="save-delivery">Зберегти текст доставки</button>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Адреса та геолокація магазину</h2>
+                <div class="row">
+                    <div class="field">
+                        <label>Адреса</label>
+                        <input type="text" id="store-address" placeholder="смт Димер, вул. Яблунева, 3А">
+                    </div>
+                    <div class="field">
+                        <label>Посилання Google Maps Embed</label>
+                        <textarea id="store-map-url" placeholder="Вставте посилання з Google Maps → Поділитися → Вставити карту"></textarea>
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="btn" type="button" id="save-store-location">Зберегти адресу та карту</button>
+                </div>
+            </div>
+            
+            
+            <div class="section">
+                <h2>Тарифи доставки</h2>
+                <div class="row">
+                    <div class="field">
+                        <label>Населений пункт</label>
+                        <input type="text" id="delivery-location" placeholder="Димер">
+                    </div>
+                    <div class="field">
+                        <label>Умови та ціна</label>
+                        <textarea id="delivery-conditions" placeholder="До 500 грн — 80 грн; від 500 грн — 30 грн"></textarea>
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="btn" type="button" id="add-delivery-rate">Додати тариф</button>
+                </div>
+                <div class="list" id="delivery-rates-list"></div>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-footer">
+            <div class="section">
+                <h2>Футер — Контакти та соцмережі</h2>
+                <div class="row">
+                    <div class="field">
+                        <label>Телефон (показ у футері)</label>
+                        <input type="text" id="store-phone" placeholder="+38 (096) 801-10-02">
+                    </div>
+                    <div class="field">
+                        <label>Години роботи</label>
+                        <input type="text" id="store-hours" placeholder="Щодня 10:00 – 22:00">
+                    </div>
+                </div>
+                <div class="row" style="margin-top:12px;">
+                    <div class="field">
+                        <label>Instagram (посилання)</label>
+                        <input type="text" id="store-social-instagram" placeholder="https://instagram.com/...">
+                    </div>
+                    <div class="field">
+                        <label>Facebook (посилання)</label>
+                        <input type="text" id="store-social-facebook" placeholder="https://facebook.com/...">
+                    </div>
+                    <div class="field">
+                        <label>Telegram (посилання)</label>
+                        <input type="text" id="store-social-telegram" placeholder="https://t.me/...">
+                    </div>
+                </div>
+                <div class="button-row">
+                    <button class="btn" type="button" id="save-store-footer">Зберегти футер</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="save-message" class="msg" aria-live="polite"></div>
+    </div>
+
+    
+
+    <script>
+        const tabs = Array.from(document.querySelectorAll('.tab-btn'));
+        const panels = Array.from(document.querySelectorAll('.panel'));
+        const ordersNode = document.getElementById('orders');
+        const refreshBtn = document.getElementById('refresh-btn');
+        const saveMessage = document.getElementById('save-message');
+        const adminLock = document.getElementById('admin-lock');
+        const adminPanel = document.getElementById('admin-panel');
+        const adminLoginForm = document.getElementById('admin-login-form');
+        const adminKeyInput = document.getElementById('admin-key-input');
+        const adminLoginError = document.getElementById('admin-login-error');
+        const newOrderAlert = document.getElementById('new-order-alert');
+        let knownOrderIds = new Set();
+        let ordersInitialized = false;
+        let orderPollingId = null;
+        let orderAudioContext = null;
+        let highlightedOrderIds = new Set();
+        let latestOrders = [];
+        const ADMIN_ACCESS_KEY = 'sushi-home-2026';
+        const defaultConfig = {
+            admin: { accessKey: ADMIN_ACCESS_KEY },
+            index: { banners: [], newProducts: [] },
+            menu: { categories: [], items: [] },
+            delivery: { text: '', rates: [] },
+            content: { index: {}, delivery: {}, store: {} }
+        };
+
+        const getApiUrl = (path) => {
+            return window.location.protocol === 'file:' ? `http://localhost:4000${path}` : path;
+        };
+
+        async function readApiJson(response) {
+            const body = await response.text();
+            if (!body.trim()) {
+                throw new Error('Сервер повернув порожню відповідь. Перевірте, що сервер Sushi Home запущений.');
+            }
+
+            try {
+                return JSON.parse(body);
+            } catch {
+                throw new Error('Сервер повернув не JSON. Перевірте, що адмінка відкрита через сервер Sushi Home, а не статичний хостинг.');
+            }
+        }
+
+        const readFileAsDataUrl = (file) => new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = () => reject(new Error('Не вдалося прочитати фото'));
+            reader.readAsDataURL(file);
+        });
+
+        async function uploadImageFile(file, targetInput) {
+            if (!file || !file.type || !file.type.startsWith('image/')) {
+                throw new Error('Виберіть коректне зображення');
+            }
+
+            const dataUrl = await readFileAsDataUrl(file);
+            const response = await fetch(getApiUrl('/api/upload'), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    fileName: file.name,
+                    dataUrl
+                })
+            });
+
+            const result = await readApiJson(response);
+            if (!response.ok) {
+                throw new Error(result.message || 'Не вдалося завантажити фото');
+            }
+
+            targetInput.value = result.path || '';
+            const zone = targetInput.closest('.field')?.querySelector('.image-upload-zone');
+            const label = zone?.querySelector('.upload-label');
+            if (label) {
+                label.textContent = file.name;
+            }
+            return result.path;
+        }
+
+        document.querySelectorAll('.image-file-input').forEach((input) => {
+            const targetInput = document.getElementById(input.dataset.target);
+            const zone = input.closest('.image-upload-zone');
+            const trigger = zone?.querySelector('.upload-trigger');
+
+            if (trigger) {
+                trigger.addEventListener('click', () => input.click());
+            }
+
+            input.addEventListener('change', async (event) => {
+                const file = event.target.files?.[0];
+                if (!file) {
+                    return;
+                }
+
+                try {
+                    await uploadImageFile(file, targetInput);
+                    showMessage('Фото завантажено', true);
+                } catch (error) {
+                    showMessage(error.message || 'Не вдалося завантажити фото');
+                } finally {
+                    event.target.value = '';
+                }
+            });
+
+            if (zone) {
+                zone.addEventListener('dragover', (event) => {
+                    event.preventDefault();
+                    zone.classList.add('dragging');
+                });
+
+                zone.addEventListener('dragleave', () => {
+                    zone.classList.remove('dragging');
+                });
+
+                zone.addEventListener('drop', async (event) => {
+                    event.preventDefault();
+                    zone.classList.remove('dragging');
+                    const file = event.dataTransfer?.files?.[0];
+                    if (!file) {
+                        return;
+                    }
+
+                    try {
+                        await uploadImageFile(file, targetInput);
+                        showMessage('Фото завантажено', true);
+                    } catch (error) {
+                        showMessage(error.message || 'Не вдалося завантажити фото');
+                    }
+                });
+            }
+        });
+
+        function isAdminUnlocked() {
+            return localStorage.getItem('sushiAdminUnlocked') === 'true';
+        }
+
+        function unlockAdmin() {
+            localStorage.setItem('sushiAdminUnlocked', 'true');
+            adminLock.style.display = 'none';
+            adminPanel.style.display = 'block';
+            document.body.classList.remove('locked');
+        }
+
+        function lockAdmin() {
+            localStorage.removeItem('sushiAdminUnlocked');
+            adminLock.style.display = 'grid';
+            adminPanel.style.display = 'none';
+            document.body.classList.add('locked');
+        }
+
+        adminLoginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const key = adminKeyInput.value.trim();
+            if (!key) {
+                adminLoginError.textContent = 'Введіть ключ';
+                return;
+            }
+
+            try {
+                const response = await fetch(getApiUrl('/api/admin/login'), {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ key })
+                });
+                const result = await readApiJson(response);
+
+                if (!response.ok) {
+                    throw new Error(result.message || 'Невірний ключ');
+                }
+
+                unlockAdmin();
+                enableOrderSound();
+                startOrderPolling();
+                adminLoginError.textContent = '';
+                adminKeyInput.value = '';
+            } catch (error) {
+                adminLoginError.textContent = error.message || 'Невірний ключ';
+            }
+        });
+
+        if (isAdminUnlocked()) {
+            unlockAdmin();
+        } else {
+            lockAdmin();
+        }
+
+        const showMessage = (text, isSuccess = false) => {
+            saveMessage.textContent = text;
+            saveMessage.classList.toggle('success', isSuccess);
+        };
+
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((item) => item.classList.toggle('active', item === tab));
+                panels.forEach((panel) => panel.classList.toggle('active', panel.id === `panel-${tab.dataset.tab}`));
+            });
+        });
+
+        async function fetchConfig() {
+            const response = await fetch(getApiUrl('/api/config'));
+            const result = await readApiJson(response);
+            return result.config || defaultConfig;
+        }
+
+        async function saveConfig(config) {
+            const response = await fetch(getApiUrl('/api/config'), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(config)
+            });
+            const result = await readApiJson(response);
+            if (!response.ok) {
+                throw new Error(result.message || 'Помилка');
+            }
+            return result.config || config;
+        }
+
+        function renderOrders(orders) {
+            if (!orders.length) {
+                ordersNode.innerHTML = '<div class="empty">Поки немає замовлень.</div>';
+                return;
+            }
+
+            ordersNode.innerHTML = orders.map((order) => {
+                const items = Array.isArray(order.items) && order.items.length
+                    ? order.items.map((item) => `<li>${item.title} × ${item.quantity || 1}</li>`).join('')
+                    : '<li>Товари не вказані</li>';
+
+                const date = new Date(order.createdAt).toLocaleString('uk-UA', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+
+                return `
+                    <div class="order-card${highlightedOrderIds.has(String(order.id)) && order.status !== 'accepted' ? ' new-order' : ''}">
+                        <div class="order-top">
+                            <div class="order-name">${order.name || 'Клієнт'}</div>
+                            <div class="order-time">${date}</div>
+                        </div>
+                        <div class="order-details">
+                            <div><strong>Телефон:</strong> ${order.phone || '—'}</div>
+                            <div><strong>Адреса:</strong> ${order.address || '—'}</div>
+                            <div><strong>Коментар:</strong> ${order.comment || '—'}</div>
+                            <ul class="order-items">${items}</ul>
+                            <p class="order-total">Сума: ${order.total || 0} грн</p>
+                            ${order.status === 'accepted'
+                                ? '<p class="order-accepted">✓ Прийнято</p>'
+                                : `<button type="button" class="btn accept-order-btn" data-order-id="${order.id}">Прийняти</button>`}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        async function enableOrderSound() {
+            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+            if (!AudioContextClass) return;
+            if (!orderAudioContext) {
+                orderAudioContext = new AudioContextClass();
+            }
+            if (orderAudioContext.state === 'suspended') {
+                try {
+                    await orderAudioContext.resume();
+                } catch (error) {
+                    // The browser can require a later click before sound is enabled.
+                }
+            }
+        }
+
+        function playNewOrderSound() {
+            if (!orderAudioContext || orderAudioContext.state !== 'running') return;
+            const oscillator = orderAudioContext.createOscillator();
+            const volume = orderAudioContext.createGain();
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(880, orderAudioContext.currentTime);
+            oscillator.frequency.setValueAtTime(1175, orderAudioContext.currentTime + 0.16);
+            volume.gain.setValueAtTime(0.0001, orderAudioContext.currentTime);
+            volume.gain.exponentialRampToValueAtTime(0.18, orderAudioContext.currentTime + 0.02);
+            volume.gain.exponentialRampToValueAtTime(0.0001, orderAudioContext.currentTime + 0.55);
+            oscillator.connect(volume);
+            volume.connect(orderAudioContext.destination);
+            oscillator.start();
+            oscillator.stop(orderAudioContext.currentTime + 0.56);
+        }
+
+        function announceNewOrders(count) {
+            const text = count === 1 ? '🔔 Нове замовлення!' : `🔔 Нові замовлення: ${count}`;
+            newOrderAlert.textContent = text;
+            newOrderAlert.classList.add('visible');
+            document.title = text;
+            window.setTimeout(() => {
+                newOrderAlert.classList.remove('visible');
+                document.title = 'Адмін: Sushi Home';
+            }, 12000);
+        }
+
+        async function loadOrders({ notifyNew = false } = {}) {
+            try {
+                const response = await fetch(getApiUrl('/api/orders'), { cache: 'no-store' });
+                const result = await readApiJson(response);
+                const orders = Array.isArray(result.orders) ? result.orders : [];
+                latestOrders = orders;
+                const currentOrderIds = new Set(orders.map((order) => String(order.id)));
+                const newOrders = orders.filter((order) => !knownOrderIds.has(String(order.id)));
+                if (notifyNew && ordersInitialized && newOrders.length) {
+                    newOrders.forEach((order) => highlightedOrderIds.add(String(order.id)));
+                }
+                renderOrders(orders);
+
+                if (notifyNew && ordersInitialized && newOrders.length) {
+                    playNewOrderSound();
+                    announceNewOrders(newOrders.length);
+                    showMessage(`Нове замовлення${newOrders.length > 1 ? `: ${newOrders.length}` : ''}`, true);
+                }
+
+                knownOrderIds = currentOrderIds;
+                ordersInitialized = true;
+            } catch (error) {
+                ordersNode.innerHTML = '<div class="empty">Не вдалося завантажити замовлення.</div>';
+            }
+        }
+
+        function startOrderPolling() {
+            if (orderPollingId) return;
+            loadOrders();
+            orderPollingId = window.setInterval(() => {
+                if (isAdminUnlocked()) {
+                    loadOrders({ notifyNew: true });
+                }
+            }, 5000);
+        }
+
+        document.addEventListener('pointerdown', enableOrderSound, { once: true });
+
+        function renderBannerList(banners) {
+            const list = document.getElementById('banner-list');
+            list.innerHTML = banners.length ? banners.map((banner, index) => `
+                <div class="list-item">
+                    <div>
+                        <strong>${banner.title || 'Банер'}</strong><br>
+                        <small>${banner.subtitle || 'Без тексту'}</small>
+                        <br><small>Десктоп: ${banner.image || '—'}<br>Мобільний: ${banner.mobileImage || 'за замовчуванням'}</small>
+                    </div>
+                    <div class="action-group">
+                        <button type="button" class="edit-btn" data-type="bannerEdit" data-index="${index}">Редагувати</button>
+                        <button type="button" class="remove-btn" data-type="banner" data-index="${index}">Видалити</button>
+                    </div>
+                </div>
+            `).join('') : '<div class="empty">Немає банерів</div>';
+        }
+
+        function renderNewProducts(products) {
+            const list = document.getElementById('new-products-list');
+            list.innerHTML = products.length ? products.map((item, index) => `
+                <div class="list-item">
+                    <div>
+                        <strong>${item.title || 'Новинка'}</strong><br>
+                        <small>${item.price || '—'} • ${item.weight || '—'} • ${item.ingredients || '—'}</small>
+                    </div>
+                    <div class="action-group">
+                        <button type="button" class="edit-btn" data-type="newProductEdit" data-index="${index}">Редагувати</button>
+                        <button type="button" class="remove-btn" data-type="newProduct" data-index="${index}">Видалити</button>
+                    </div>
+                </div>
+            `).join('') : '<div class="empty">Немає новинок</div>';
+        }
+
+        function renderCategories(categories) {
+            const list = document.getElementById('category-list');
+            const select = document.getElementById('product-category');
+            list.innerHTML = categories.length ? categories.map((category, index) => `
+                <div class="list-item">
+                    <div>
+                        <strong>${category.name}</strong><br>
+                        <small>ID: ${category.id}</small>
+                    </div>
+                    <div class="action-group">
+                        <button type="button" class="move-btn" data-type="categoryMove" data-index="${index}" data-direction="up" aria-label="Підняти категорію">↑</button>
+                        <button type="button" class="move-btn" data-type="categoryMove" data-index="${index}" data-direction="down" aria-label="Опустити категорію">↓</button>
+                        <button type="button" class="edit-btn" data-type="categoryEdit" data-index="${index}">Редагувати</button>
+                        <button type="button" class="remove-btn" data-type="category" data-index="${index}">Видалити</button>
+                    </div>
+                </div>
+            `).join('') : '<div class="empty">Немає категорій</div>';
+
+            select.innerHTML = categories.length
+                ? categories.map((category) => `<option value="${category.id}">${category.name}</option>`).join('')
+                : '<option value="">Спочатку додайте категорії</option>';
+        }
+
+        function renderProducts(items) {
+            const list = document.getElementById('product-list');
+            list.innerHTML = items.length ? items.map((item, index) => `
+                <div class="list-item">
+                    <div>
+                        <strong>${item.title}</strong><br>
+                        <small>${item.price} • ${item.weight}</small>
+                    </div>
+                    <div class="action-group">
+                        <button type="button" class="edit-btn" data-type="productEdit" data-index="${index}">Редагувати</button>
+                        <button type="button" class="remove-btn" data-type="product" data-index="${index}">Видалити</button>
+                    </div>
+                </div>
+            `).join('') : '<div class="empty">Немає товарів</div>';
+        }
+
+        function renderDeliveryRates(rates) {
+            const list = document.getElementById('delivery-rates-list');
+            list.innerHTML = rates.length ? rates.map((rate, index) => `
+                <div class="list-item">
+                    <div>
+                        <strong>${rate.location || 'Населений пункт'}</strong><br>
+                        <small>${rate.conditions || '—'}</small>
+                    </div>
+                    <div class="action-group">
+                        <button type="button" class="edit-btn" data-type="deliveryRateEdit" data-index="${index}">Редагувати</button>
+                        <button type="button" class="remove-btn" data-type="deliveryRate" data-index="${index}">Видалити</button>
+                    </div>
+                </div>
+            `).join('') : '<div class="empty">Немає тарифів</div>';
+        }
+
+        const adminEditState = {
+            bannerIndex: null,
+            categoryIndex: null,
+            productIndex: null,
+            newProductIndex: null,
+            deliveryRateIndex: null
+        };
+
+        function resetBannerForm() {
+            adminEditState.bannerIndex = null;
+            document.getElementById('banner-title').value = '';
+            document.getElementById('banner-subtitle').value = '';
+            document.getElementById('banner-image').value = '';
+            document.getElementById('banner-mobile-image').value = '';
+            document.getElementById('add-banner').textContent = 'Додати банер';
+            document.getElementById('cancel-banner-edit').hidden = true;
+        }
+
+        function resetCategoryForm() {
+            adminEditState.categoryIndex = null;
+            document.getElementById('category-id').value = '';
+            document.getElementById('category-name').value = '';
+            document.getElementById('add-category').textContent = 'Додати категорію';
+        }
+
+        function resetProductForm() {
+            adminEditState.productIndex = null;
+            document.getElementById('product-title').value = '';
+            document.getElementById('product-category').value = '';
+            document.getElementById('product-price').value = '';
+            document.getElementById('product-weight').value = '';
+            document.getElementById('product-ingredients').value = '';
+            document.getElementById('product-image').value = '';
+            document.getElementById('add-product').textContent = 'Додати товар';
+        }
+
+        function resetNewProductForm() {
+            adminEditState.newProductIndex = null;
+            document.getElementById('new-title').value = '';
+            document.getElementById('new-price').value = '';
+            document.getElementById('new-weight').value = '';
+            document.getElementById('new-ingredients').value = '';
+            document.getElementById('new-image').value = '';
+            document.getElementById('add-new-product').textContent = 'Додати новинку';
+        }
+
+        function resetDeliveryRateForm() {
+            adminEditState.deliveryRateIndex = null;
+            document.getElementById('delivery-location').value = '';
+            document.getElementById('delivery-conditions').value = '';
+            document.getElementById('add-delivery-rate').textContent = 'Додати тариф';
+        }
+
+        async function loadAdminConfig() {
+            const config = await fetchConfig();
+            const safeConfig = {
+                index: { banners: config.index?.banners || [], newProducts: config.index?.newProducts || [] },
+                menu: { categories: config.menu?.categories || [], items: config.menu?.items || [] },
+                delivery: { text: config.delivery?.text || '', rates: config.delivery?.rates || [] }
+            };
+
+            renderBannerList(safeConfig.index.banners);
+            renderNewProducts(safeConfig.index.newProducts);
+            renderCategories(safeConfig.menu.categories);
+            renderProducts(safeConfig.menu.items);
+            renderDeliveryRates(safeConfig.delivery.rates);
+            document.getElementById('index-about-title').value = config.content?.index?.aboutTitle || '';
+            document.getElementById('index-about-text').value = config.content?.index?.aboutText || '';
+            document.getElementById('delivery-page-title').value = config.content?.delivery?.title || '';
+            document.getElementById('delivery-page-text').value = config.content?.delivery?.text || '';
+            document.getElementById('store-address').value = config.content?.store?.address || '';
+            document.getElementById('store-map-url').value = config.content?.store?.mapUrl || '';
+            document.getElementById('store-phone').value = config.content?.store?.phone || '';
+            document.getElementById('store-hours').value = config.content?.store?.hours || '';
+            document.getElementById('store-social-instagram').value = config.content?.store?.social?.instagram || '';
+            document.getElementById('store-social-facebook').value = config.content?.store?.social?.facebook || '';
+            document.getElementById('store-social-telegram').value = config.content?.store?.social?.telegram || '';
+            return safeConfig;
+        }
+
+        async function saveCurrentConfig() {
+            const config = await fetchConfig();
+            const safeConfig = {
+                index: { banners: config.index?.banners || [], newProducts: config.index?.newProducts || [] },
+                menu: { categories: config.menu?.categories || [], items: config.menu?.items || [] },
+                delivery: { text: document.getElementById('delivery-text').value || '', rates: config.delivery?.rates || [] }
+            };
+
+            await saveConfig(safeConfig);
+            return safeConfig;
+        }
+
+        document.getElementById('add-banner').addEventListener('click', async () => {
+            const config = await fetchConfig();
+            const title = document.getElementById('banner-title').value.trim();
+            const subtitle = document.getElementById('banner-subtitle').value.trim();
+            const image = document.getElementById('banner-image').value.trim();
+            const mobileImage = document.getElementById('banner-mobile-image').value.trim();
+
+            if (!title && !subtitle && !image && !mobileImage) {
+                showMessage('Заповніть хоча б одне поле банера');
+                return;
+            }
+
+            config.index = config.index || { banners: [], newProducts: [] };
+            config.index.banners = config.index.banners || [];
+            const banner = { title, subtitle, image, mobileImage };
+            if (adminEditState.bannerIndex !== null && config.index.banners[adminEditState.bannerIndex]) {
+                config.index.banners[adminEditState.bannerIndex] = banner;
+            } else {
+                config.index.banners.push(banner);
+            }
+
+            await saveConfig(config);
+            const fresh = await loadAdminConfig();
+            showMessage(adminEditState.bannerIndex === null ? 'Банер додано' : 'Банер збережено', true);
+            resetBannerForm();
+            renderBannerList(fresh.index.banners);
+        });
+
+        document.getElementById('cancel-banner-edit').addEventListener('click', resetBannerForm);
+
+        document.getElementById('add-new-product').addEventListener('click', async () => {
+            const config = await fetchConfig();
+            const title = document.getElementById('new-title').value.trim();
+            const price = document.getElementById('new-price').value.trim();
+            const weight = document.getElementById('new-weight').value.trim();
+            const ingredients = document.getElementById('new-ingredients').value.trim();
+            const image = document.getElementById('new-image').value.trim();
+
+            if (!title) {
+                showMessage('Введіть назву новинки');
+                return;
+            }
+
+            config.index = config.index || { banners: [], newProducts: [] };
+            config.index.newProducts = config.index.newProducts || [];
+
+            const payload = { title, price, weight, ingredients, image };
+            if (adminEditState.newProductIndex !== null && config.index.newProducts[adminEditState.newProductIndex]) {
+                config.index.newProducts[adminEditState.newProductIndex] = payload;
+                showMessage('Новинку оновлено', true);
+            } else {
+                config.index.newProducts.push(payload);
+                showMessage('Новинку додано', true);
+            }
+
+            await saveConfig(config);
+            const fresh = await loadAdminConfig();
+            resetNewProductForm();
+            renderNewProducts(fresh.index.newProducts);
+        });
+
+        document.getElementById('add-category').addEventListener('click', async () => {
+            const config = await fetchConfig();
+            const id = document.getElementById('category-id').value.trim();
+            const name = document.getElementById('category-name').value.trim();
+
+            if (!id || !name) {
+                showMessage('Введіть ID і назву категорії');
+                return;
+            }
+
+            config.menu = config.menu || { categories: [], items: [] };
+            config.menu.categories = config.menu.categories || [];
+
+            if (adminEditState.categoryIndex !== null && config.menu.categories[adminEditState.categoryIndex]) {
+                config.menu.categories[adminEditState.categoryIndex] = { id, name };
+                showMessage('Категорію оновлено', true);
+            } else {
+                config.menu.categories.push({ id, name });
+                showMessage('Категорію додано', true);
+            }
+
+            await saveConfig(config);
+            const fresh = await loadAdminConfig();
+            resetCategoryForm();
+            renderCategories(fresh.menu.categories);
+        });
+
+        document.getElementById('add-product').addEventListener('click', async () => {
+            const config = await fetchConfig();
+            const title = document.getElementById('product-title').value.trim();
+            const category = document.getElementById('product-category').value;
+            const price = document.getElementById('product-price').value.trim();
+            const weight = document.getElementById('product-weight').value.trim();
+            const ingredients = document.getElementById('product-ingredients').value.trim();
+            const image = document.getElementById('product-image').value.trim();
+
+            if (!title || !category) {
+                showMessage('Введіть назву товару і виберіть категорію');
+                return;
+            }
+
+            config.menu = config.menu || { categories: [], items: [] };
+            config.menu.items = config.menu.items || [];
+
+            const payload = {
+                id: adminEditState.productIndex !== null && config.menu.items[adminEditState.productIndex]?.id ? config.menu.items[adminEditState.productIndex].id : `item-${Date.now()}`,
+                category,
+                title,
+                price,
+                weight,
+                ingredients,
+                image
+            };
+
+            if (adminEditState.productIndex !== null && config.menu.items[adminEditState.productIndex]) {
+                config.menu.items[adminEditState.productIndex] = payload;
+                showMessage('Товар оновлено', true);
+            } else {
+                config.menu.items.push(payload);
+                showMessage('Товар додано', true);
+            }
+
+            await saveConfig(config);
+            const fresh = await loadAdminConfig();
+            resetProductForm();
+            renderProducts(fresh.menu.items);
+        });
+
+        document.getElementById('save-delivery').addEventListener('click', async () => {
+            const config = await fetchConfig();
+            config.delivery = config.delivery || { text: '', rates: [] };
+            config.content = config.content || {};
+            config.content.delivery = {
+                title: document.getElementById('delivery-page-title').value.trim(),
+                text: document.getElementById('delivery-page-text').value.trim()
+            };
+            await saveConfig(config);
+            showMessage('Текст доставки збережено', true);
+        });
+
+        document.getElementById('save-index-content').addEventListener('click', async () => {
+            const config = await fetchConfig();
+            config.content = config.content || {};
+            config.content.index = {
+                aboutTitle: document.getElementById('index-about-title').value.trim(),
+                aboutText: document.getElementById('index-about-text').value.trim()
+            };
+            await saveConfig(config);
+            showMessage('Тексти головної збережено', true);
+        });
+
+        document.getElementById('save-store-location').addEventListener('click', async () => {
+            const config = await fetchConfig();
+            config.content = config.content || {};
+            config.content.store = {
+                address: document.getElementById('store-address').value.trim(),
+                mapUrl: document.getElementById('store-map-url').value.trim()
+            };
+            await saveConfig(config);
+            showMessage('Адресу та карту збережено', true);
+        });
+
+        document.getElementById('save-store-footer').addEventListener('click', async () => {
+            const config = await fetchConfig();
+            config.content = config.content || {};
+            config.content.store = config.content.store || {};
+            config.content.store.phone = document.getElementById('store-phone').value.trim();
+            config.content.store.hours = document.getElementById('store-hours').value.trim();
+            config.content.store.social = config.content.store.social || {};
+            config.content.store.social.instagram = document.getElementById('store-social-instagram').value.trim();
+            config.content.store.social.facebook = document.getElementById('store-social-facebook').value.trim();
+            config.content.store.social.telegram = document.getElementById('store-social-telegram').value.trim();
+            await saveConfig(config);
+            showMessage('Футер збережено', true);
+        });
+
+        
+
+        document.getElementById('add-delivery-rate').addEventListener('click', async () => {
+            const config = await fetchConfig();
+            const location = document.getElementById('delivery-location').value.trim();
+            const conditions = document.getElementById('delivery-conditions').value.trim();
+            if (!location || !conditions) {
+                showMessage('Введіть населений пункт і умови доставки');
+                return;
+            }
+            config.delivery = config.delivery || { text: '', rates: [] };
+            config.delivery.rates = Array.isArray(config.delivery.rates) ? config.delivery.rates : [];
+            if (adminEditState.deliveryRateIndex !== null && config.delivery.rates[adminEditState.deliveryRateIndex]) {
+                config.delivery.rates[adminEditState.deliveryRateIndex] = { location, conditions };
+                showMessage('Тариф оновлено', true);
+            } else {
+                config.delivery.rates.push({ location, conditions });
+                showMessage('Тариф додано', true);
+            }
+            await saveConfig(config);
+            const fresh = await loadAdminConfig();
+            resetDeliveryRateForm();
+            renderDeliveryRates(fresh.delivery.rates);
+        });
+
+        async function moveCategoryInConfig(index, direction) {
+            const config = await fetchConfig();
+            const categories = Array.isArray(config.menu?.categories) ? config.menu.categories : [];
+            const nextIndex = index + direction;
+
+            if (!categories[index] || nextIndex < 0 || nextIndex >= categories.length) {
+                return;
+            }
+
+            [categories[index], categories[nextIndex]] = [categories[nextIndex], categories[index]];
+            config.menu = config.menu || { categories: [], items: [] };
+            config.menu.categories = categories;
+            await saveConfig(config);
+            await loadAdminConfig();
+            showMessage('Порядок категорій оновлено', true);
+        }
+
+        document.addEventListener('click', async (event) => {
+            const acceptButton = event.target.closest('.accept-order-btn');
+            if (acceptButton) {
+                const orderId = acceptButton.dataset.orderId;
+                acceptButton.disabled = true;
+                try {
+                    const response = await fetch(getApiUrl(`/api/orders/${encodeURIComponent(orderId)}/accept`), {
+                        method: 'POST'
+                    });
+                    const result = await readApiJson(response);
+                    if (!response.ok) throw new Error(result.message || 'Не вдалося прийняти замовлення');
+                    highlightedOrderIds.delete(String(orderId));
+                    latestOrders = latestOrders.map((order) => String(order.id) === String(orderId)
+                        ? { ...order, status: 'accepted', acceptedAt: result.order?.acceptedAt }
+                        : order);
+                    renderOrders(latestOrders);
+                    showMessage('Замовлення прийнято', true);
+                } catch (error) {
+                    acceptButton.disabled = false;
+                    showMessage(error.message || 'Не вдалося прийняти замовлення');
+                }
+                return;
+            }
+
+            const editButton = event.target.closest('.edit-btn');
+            if (editButton) {
+                const type = editButton.dataset.type;
+                const index = Number(editButton.dataset.index);
+                const config = await fetchConfig();
+
+                if (type === 'bannerEdit') {
+                    const banner = config.index?.banners?.[index];
+                    if (banner) {
+                        document.getElementById('banner-title').value = banner.title || '';
+                        document.getElementById('banner-subtitle').value = banner.subtitle || '';
+                        document.getElementById('banner-image').value = banner.image || '';
+                        document.getElementById('banner-mobile-image').value = banner.mobileImage || '';
+                        adminEditState.bannerIndex = index;
+                        document.getElementById('add-banner').textContent = 'Зберегти банер';
+                        document.getElementById('cancel-banner-edit').hidden = false;
+                        document.getElementById('panel-index').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                    return;
+                }
+
+                if (type === 'categoryEdit') {
+                    const category = config.menu?.categories?.[index];
+                    if (category) {
+                        document.getElementById('category-id').value = category.id || '';
+                        document.getElementById('category-name').value = category.name || '';
+                        adminEditState.categoryIndex = index;
+                        document.getElementById('add-category').textContent = 'Зберегти категорію';
+                    }
+                    return;
+                }
+
+                if (type === 'productEdit') {
+                    const item = config.menu?.items?.[index];
+                    if (item) {
+                        document.getElementById('product-title').value = item.title || '';
+                        document.getElementById('product-category').value = item.category || '';
+                        document.getElementById('product-price').value = item.price || '';
+                        document.getElementById('product-weight').value = item.weight || '';
+                        document.getElementById('product-ingredients').value = item.ingredients || '';
+                        document.getElementById('product-image').value = item.image || '';
+                        adminEditState.productIndex = index;
+                        document.getElementById('add-product').textContent = 'Зберегти товар';
+                    }
+                    return;
+                }
+
+                if (type === 'newProductEdit') {
+                    const item = config.index?.newProducts?.[index];
+                    if (item) {
+                        document.getElementById('new-title').value = item.title || '';
+                        document.getElementById('new-price').value = item.price || '';
+                        document.getElementById('new-weight').value = item.weight || '';
+                        document.getElementById('new-ingredients').value = item.ingredients || '';
+                        document.getElementById('new-image').value = item.image || '';
+                        adminEditState.newProductIndex = index;
+                        document.getElementById('add-new-product').textContent = 'Зберегти новинку';
+                    }
+                    return;
+                }
+
+                if (type === 'deliveryRateEdit') {
+                    const rate = config.delivery?.rates?.[index];
+                    if (rate) {
+                        document.getElementById('delivery-location').value = rate.location || '';
+                        document.getElementById('delivery-conditions').value = rate.conditions || '';
+                        adminEditState.deliveryRateIndex = index;
+                        document.getElementById('add-delivery-rate').textContent = 'Зберегти тариф';
+                    }
+                    return;
+                }
+            }
+
+            const moveButton = event.target.closest('.move-btn');
+            if (moveButton) {
+                const index = Number(moveButton.dataset.index);
+                const direction = moveButton.dataset.direction === 'up' ? -1 : 1;
+                await moveCategoryInConfig(index, direction);
+                return;
+            }
+
+            const item = event.target.closest('.remove-btn');
+            if (!item) return;
+
+            const config = await fetchConfig();
+            const type = item.dataset.type;
+            const index = Number(item.dataset.index);
+
+            if (type === 'banner') {
+                if (config.index?.banners?.[index]) {
+                    config.index.banners.splice(index, 1);
+                }
+            }
+
+            if (type === 'newProduct') {
+                if (config.index?.newProducts?.[index]) {
+                    config.index.newProducts.splice(index, 1);
+                }
+            }
+
+            if (type === 'category') {
+                if (config.menu?.categories?.[index]) {
+                    config.menu.categories.splice(index, 1);
+                }
+            }
+
+            if (type === 'product') {
+                if (config.menu?.items?.[index]) {
+                    config.menu.items.splice(index, 1);
+                }
+            }
+
+            if (type === 'deliveryRate' && config.delivery?.rates?.[index]) {
+                config.delivery.rates.splice(index, 1);
+            }
+
+            await saveConfig(config);
+            const fresh = await loadAdminConfig();
+            showMessage('Елемент видалено', true);
+        });
+
+        refreshBtn.addEventListener('click', async () => {
+            const config = await loadAdminConfig();
+            await loadOrders();
+            showMessage('Дані оновлено', true);
+        });
+
+        loadAdminConfig().catch((error) => {
+            showMessage(error.message || 'Не вдалося завантажити дані адмінки');
+        });
+        if (isAdminUnlocked()) {
+            startOrderPolling();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Меню | Sushi Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="menu.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+</head>
+
+<body>
+    <script>
+        if (sessionStorage.getItem('sushiSiteUnlocked') !== 'true') {
+            window.location.href = 'access.html';
+        }
+    </script>
+
+<!-- =======================================
+HEADER
+======================================= -->
+
+<header>
+
+    <div class="container">
+
+        <a href="index.html"
+           class="logo">
+
+            <img src="images/logo.svg"
+                 alt="Sushi Home">
+
+        </a>
+
+        <div class="header-right">
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a href="menu.html">
+                            Меню
+                        </a>
+                    </li>
+
+                    <li><a href="delivery.html">Доставка</a></li>
+
+                    <li>
+                        <a href="order.html">
+                            Замовити
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <div class="search">
+
+                <button>
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+            </div>
+
+            <button class="burger-btn" type="button" aria-label="Відкрити меню">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-inner">
+            <button class="mobile-menu-close" type="button" aria-label="Закрити меню">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <nav>
+                <ul>
+                    <li><a href="menu.html">Меню</a></li>
+                    <li><a href="delivery.html">Доставка</a></li>
+                    <li><a href="order.html">Замовити</a></li>
+                </ul>
+            </nav>
+
+            <div class="mobile-search">
+                <input type="search" placeholder="Пошук...">
+                <button type="button" aria-label="Пошук"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </div>
+
+</header>
+
+<!-- =======================================
+CATEGORIES
+======================================= -->
+
+<section class="categories">
+
+    <div class="container">
+
+        <div class="category-list">
+
+            <button class="active" data-category="sety">СЕТИ</button>
+            <button data-category="filadelfiya">ФІЛАДЕЛЬФІЯ</button>
+            <button data-category="firmovi">ФІРМОВІ РОЛИ</button>
+            <button data-category="kaliforniya">КАЛІФОРНІЯ</button>
+            <button data-category="drakony">ДРАКОНИ</button>
+            <button data-category="bonito">БОНІТО</button>
+            <button data-category="z-krevetkami">З КРЕВЕТКАМИ</button>
+            <button data-category="z-midiyami">З МІДІЯМИ</button>
+            <button data-category="zapeczeni">ЗАПЕЧЕНІ</button>
+            <button data-category="tempura">ТЕМПУРА</button>
+            <button data-category="futomaki">ФУТОМАКІ</button>
+            <button data-category="inyan">ІНЬ ЯН</button>
+            <button data-category="maki">МАКІ</button>
+            <button data-category="sushi">СУШІ</button>
+            <button data-category="solodki-roly">СОЛОДКІ РОЛИ</button>
+            <button data-category="frityur">ФРИТЮР</button>
+            <button data-category="supy">СУПИ</button>
+            <button data-category="salaty">САЛАТИ</button>
+            <button data-category="napoi">НАПОЇ</button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================
+PRODUCTS
+======================================= -->
+
+<section class="products">
+    <div class="container">
+        <div class="products-grid" aria-live="polite"></div>
+    </div>
+</section>
+
+<!-- =======================================
+FOOTER
+======================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-column">
+
+                <img src="images/logo.svg"
+                     alt="Sushi Home"
+                     class="footer-logo">
+
+                <p>
+
+                    Sushi Home — доставка свіжих суші,
+                    ролів, сетів та гарячих страв.
+
+                    Працюємо щодня для вас ❤️
+
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Навігація</h3>
+
+                <ul>
+
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="menu.html">Меню</a></li>
+                    <li><a href="delivery.html">Доставка</a></li>
+                    <li><a href="order.html">Замовити</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Контакти</h3>
+
+                <p><i class="fa-solid fa-phone"></i> <span data-store-phone>+38 (096) 801-10-02</span></p>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span data-store-address>смт Димер, вул. Яблунева, 3А</span>
+                </p>
+
+                <p><i class="fa-solid fa-clock"></i> <span data-store-hours>Щодня 10:00 – 22:00</span></p>
+
+            </div>
+
+            <div class="footer-column">
+
+                <h3>Ми у соцмережах</h3>
+
+                <div class="social-icons" data-store-social>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <p>© PLCDO 2026. Усі права захищені.</p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<!-- =======================================
+SCRIPTS
+======================================= -->
+
+<!-- Product modal (pop-up for product details) -->
+<div class="product-modal" aria-hidden="true">
+    <div class="product-modal__backdrop" data-modal-close></div>
+    <div class="product-modal__sheet">
+        <button class="product-modal__close" data-modal-close aria-label="Закрити">&times;</button>
+        <img class="product-modal__image" src="" alt="">
+        <div class="product-modal__content">
+            <div class="product-modal__header">
+                <h3 class="product-modal__title"></h3>
+                <button class="product-modal__cart" type="button" aria-label="Додати в кошик">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+            </div>
+            <div class="product-modal__price"></div>
+            <div class="product-modal__weight"></div>
+            <div class="product-modal__description"></div>
+        </div>
+    </div>
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/page-content.js"></script>
+
+</body>
+
+</html>

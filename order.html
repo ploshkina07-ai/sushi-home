@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Замовити | Sushi Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <script>
+        if (sessionStorage.getItem('sushiSiteUnlocked') !== 'true') {
+            window.location.href = 'access.html';
+        }
+    </script>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.svg" alt="Sushi Home">
+            </a>
+
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="order.html">Замовити</a></li>
+                    </ul>
+                </nav>
+
+                <div class="search">
+                    <button type="button" aria-label="Пошук">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <button class="burger-btn" type="button" aria-label="Відкрити меню">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu" aria-hidden="true">
+            <div class="mobile-menu-inner">
+                <button class="mobile-menu-close" type="button" aria-label="Закрити меню">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="order.html">Замовити</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-search">
+                    <input type="search" placeholder="Пошук...">
+                    <button type="button" aria-label="Пошук"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact order-page">
+            <div class="container order-page-grid">
+                <div class="order-copy">
+                    <p class="eyebrow">Sushi Home</p>
+                    <h2>Замовити улюблені роли</h2>
+                    <p>
+                        Залиште заявку, і ми зв'яжемося з вами найближчим часом,
+                        щоб підтвердити замовлення або відповісти на всі питання.
+                    </p>
+
+                    <ul class="about-list">
+                        <li><i class="fa-solid fa-bowl-food"></i> Свіжі роли та сети</li>
+                        <li><i class="fa-solid fa-motorcycle"></i> Швидка доставка по району</li>
+                        <li><i class="fa-solid fa-clock"></i> Працюємо щодня з 10:00 до 22:00</li>
+                    </ul>
+                </div>
+
+                <div class="order-form-shell">
+                    <div class="order-summary">
+                        <div class="order-summary__header">
+                            <h3>Ваше замовлення</h3>
+                            <span class="order-summary__total" id="order-total">0 грн</span>
+                        </div>
+                        <div class="order-items" id="order-items">
+                            <p class="order-empty">Кошик порожній</p>
+                        </div>
+                    </div>
+
+                    <form class="order-form" id="order-form">
+                        <label>
+                            <span>Ім'я</span>
+                            <input type="text" name="name" placeholder="Ваше ім'я">
+                        </label>
+
+                        <label>
+                            <span>Телефон</span>
+                            <input type="text" name="phone" placeholder="+38 (___) ___ __ __">
+                        </label>
+
+                        <label>
+                            <span>Населений пункт</span>
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <select name="locality" id="order-locality">
+                                    <option value="">Виберіть населений пункт</option>
+                                </select>
+                            </div>
+                        </label>
+
+                        <label>
+                            <span>Адреса</span>
+                            <input type="text" name="address" placeholder="Вулиця, будинок, квартира">
+                        </label>
+
+                        <label>
+                            <span>Коментар</span>
+                            <textarea name="comment" rows="5" placeholder="Опишіть бажання до замовлення"></textarea>
+                        </label>
+
+                        <div class="order-form__actions">
+                            <button type="submit" class="btn order-btn">Відправити</button>
+                            <p class="order-success" id="order-success" aria-live="polite"></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <img src="images/logo.svg" alt="Sushi Home" class="footer-logo">
+                    <p>
+                        Sushi Home — доставка свіжих суші,
+                        ролів, сетів та гарячих страв.
+                        Працюємо щодня для вас ❤️
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Навігація</h3>
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="menu.html">Меню</a></li>
+                        <li><a href="delivery.html">Доставка</a></li>
+                        <li><a href="order.html">Замовити</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Контакти</h3>
+                    <p><i class="fa-solid fa-phone"></i> <span data-store-phone>+38 (096) 801-10-02</span></p>
+                    <p><i class="fa-solid fa-location-dot"></i> <span data-store-address>смт Димер, вул. Яблунева, 3А</span></p>
+                    <p><i class="fa-solid fa-clock"></i> <span data-store-hours>Щодня 10:00 – 22:00</span></p>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Ми у соцмережах</h3>
+                        <div class="social-icons" data-store-social>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© PLCDO 2026. Усі права захищені.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/page-content.js"></script>
+</body>
+
+</html>
